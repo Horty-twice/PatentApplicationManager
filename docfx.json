@@ -1,0 +1,22 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": ["PatentApplicationManager.csproj"],
+          "exclude": ["**/obj/**", "**/bin/**"]
+        }
+      ],
+      "dest": "api"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": ["api/**.yml", "*.md"]
+      }
+    ],
+    "dest": "_site",
+    "template": ["default"]
+  }
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class PdfReportGenerator
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class PdfReportGenerator
+   ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="PatentApplicationManager.Utils.PdfReportGenerator">
+  
+  
+  <h1 id="PatentApplicationManager_Utils_PdfReportGenerator" data-uid="PatentApplicationManager.Utils.PdfReportGenerator" class="text-break">Class PdfReportGenerator
+  </h1>
+  <div class="markdown level0 summary"><p sourcefile="api/PatentApplicationManager.Utils.PdfReportGenerator.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Генератор PDF-отчетов для патентных заявок</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">PdfReportGenerator</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="PatentApplicationManager.Utils.html">PatentApplicationManager.Utils</a></h6>
+  <h6><strong>Assembly</strong>: PatentApplicationManager.dll</h6>
+  <h5 id="PatentApplicationManager_Utils_PdfReportGenerator_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class PdfReportGenerator</code></pre>
+  </div>
+  <h5 id="PatentApplicationManager_Utils_PdfReportGenerator_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p sourcefile="api/PatentApplicationManager.Utils.PdfReportGenerator.yml" sourcestartlinenumber="2" sourceendlinenumber="3">Предоставляет статический метод для создания PDF-документов с таблицей заявок.
+Использует библиотеку PDFsharp для работы с PDF.</p>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="PatentApplicationManager_Utils_PdfReportGenerator_GenerateReport_" data-uid="PatentApplicationManager.Utils.PdfReportGenerator.GenerateReport*"></a>
+  <h4 id="PatentApplicationManager_Utils_PdfReportGenerator_GenerateReport_System_Collections_Generic_List_PatentApplicationManager_Entities_PatentApplication__System_String_" data-uid="PatentApplicationManager.Utils.PdfReportGenerator.GenerateReport(System.Collections.Generic.List{PatentApplicationManager.Entities.PatentApplication},System.String)">GenerateReport(List&lt;PatentApplication&gt;, String)</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/PatentApplicationManager.Utils.PdfReportGenerator.yml" sourcestartlinenumber="2" sourceendlinenumber="2">Генерирует PDF-отчет с перечнем патентных заявок</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void GenerateReport(List&lt;PatentApplication&gt; applications, string filePath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="PatentApplicationManager.Entities.PatentApplication.html">PatentApplication</a>&gt;</td>
+        <td><span class="parametername">applications</span></td>
+        <td><p sourcefile="api/PatentApplicationManager.Utils.PdfReportGenerator.yml" sourcestartlinenumber="1" sourceendlinenumber="1">Список патентных заявок для отображения в отчете</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">filePath</span></td>
+        <td><p sourcefile="api/PatentApplicationManager.Utils.PdfReportGenerator.yml" sourcestartlinenumber="1" sourceendlinenumber="1">Полный путь для сохранения PDF-файла</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="PatentApplicationManager_Utils_PdfReportGenerator_GenerateReport_System_Collections_Generic_List_PatentApplicationManager_Entities_PatentApplication__System_String__examples">Examples</h5>
+  <pre><code>var applications = repository.GetAllPatentApplications();
+PdfReportGenerator.GenerateReport(applications, &quot;C:\\Reports\\patents.pdf&quot;);</code></pre>
+
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p sourcefile="api/PatentApplicationManager.Utils.PdfReportGenerator.yml" sourcestartlinenumber="1" sourceendlinenumber="1">Возникает если applications или filePath равны null</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.IOException</span></td>
+        <td><p sourcefile="api/PatentApplicationManager.Utils.PdfReportGenerator.yml" sourcestartlinenumber="1" sourceendlinenumber="1">Возникает при проблемах записи файла</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

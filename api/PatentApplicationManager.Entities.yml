@@ -1,0 +1,28 @@
+### YamlMime:ManagedReference
+items:
+- uid: PatentApplicationManager.Entities
+  commentId: N:PatentApplicationManager.Entities
+  id: PatentApplicationManager.Entities
+  children:
+  - PatentApplicationManager.Entities.PatentApplication
+  langs:
+  - csharp
+  - vb
+  name: PatentApplicationManager.Entities
+  nameWithType: PatentApplicationManager.Entities
+  fullName: PatentApplicationManager.Entities
+  type: Namespace
+  assemblies:
+  - PatentApplicationManager
+references:
+- uid: PatentApplicationManager.Entities.PatentApplication
+  commentId: T:PatentApplicationManager.Entities.PatentApplication
+  parent: PatentApplicationManager.Entities
+  name: PatentApplication
+  nameWithType: PatentApplication
+  fullName: PatentApplicationManager.Entities.PatentApplication
+- uid: PatentApplicationManager.Entities
+  commentId: N:PatentApplicationManager.Entities
+  name: PatentApplicationManager.Entities
+  nameWithType: PatentApplicationManager.Entities
+  fullName: PatentApplicationManager.Entities

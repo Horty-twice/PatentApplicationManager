@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: PatentApplicationManager.Utils
+  commentId: N:PatentApplicationManager.Utils
+  id: PatentApplicationManager.Utils
+  children:
+  - PatentApplicationManager.Utils.PdfReportGenerator
+  langs:
+  - csharp
+  - vb
+  name: PatentApplicationManager.Utils
+  nameWithType: PatentApplicationManager.Utils
+  fullName: PatentApplicationManager.Utils
+  type: Namespace
+  assemblies:
+  - PatentApplicationManager
+references:
+- uid: PatentApplicationManager.Utils.PdfReportGenerator
+  commentId: T:PatentApplicationManager.Utils.PdfReportGenerator
+  name: PdfReportGenerator
+  nameWithType: PdfReportGenerator
+  fullName: PatentApplicationManager.Utils.PdfReportGenerator

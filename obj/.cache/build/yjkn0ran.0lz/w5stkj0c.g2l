@@ -1,0 +1,72 @@
+
+<div id="sidetoggle">
+  <div>
+    <div class="sidefilter">
+      <form class="toc-filter">
+        <span class="glyphicon glyphicon-filter filter-icon"></span>
+        <span class="glyphicon glyphicon-remove clear-icon" id="toc_filter_clear"></span>
+        <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+      </form>
+    </div>
+    <div class="sidetoc">
+      <div class="toc" id="toc">
+          
+          <ul class="nav level1">
+                <li>
+                    <span class="expand-stub"></span>
+                    <a href="PatentApplicationManager.html" name="" title="PatentApplicationManager">PatentApplicationManager</a>
+                    
+                    <ul class="nav level2">
+                          <li>
+                              <a href="PatentApplicationManager.MainForm.html" name="" title="MainForm">MainForm</a>
+                          </li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="expand-stub"></span>
+                    <a href="PatentApplicationManager.DAL.html" name="" title="PatentApplicationManager.DAL">PatentApplicationManager.DAL</a>
+                    
+                    <ul class="nav level2">
+                          <li>
+                              <a href="PatentApplicationManager.DAL.PatentRepository.html" name="" title="PatentRepository">PatentRepository</a>
+                          </li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="expand-stub"></span>
+                    <a href="PatentApplicationManager.Entities.html" name="" title="PatentApplicationManager.Entities">PatentApplicationManager.Entities</a>
+                    
+                    <ul class="nav level2">
+                          <li>
+                              <a href="PatentApplicationManager.Entities.PatentApplication.html" name="" title="PatentApplication">PatentApplication</a>
+                          </li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="expand-stub"></span>
+                    <a href="PatentApplicationManager.UI.html" name="" title="PatentApplicationManager.UI">PatentApplicationManager.UI</a>
+                    
+                    <ul class="nav level2">
+                          <li>
+                              <a href="PatentApplicationManager.UI.AddApplicationForm.html" name="" title="AddApplicationForm">AddApplicationForm</a>
+                          </li>
+                          <li>
+                              <a href="PatentApplicationManager.UI.EditApplicationForm.html" name="" title="EditApplicationForm">EditApplicationForm</a>
+                          </li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="expand-stub"></span>
+                    <a href="PatentApplicationManager.Utils.html" name="" title="PatentApplicationManager.Utils">PatentApplicationManager.Utils</a>
+                    
+                    <ul class="nav level2">
+                          <li>
+                              <a href="PatentApplicationManager.Utils.PdfReportGenerator.html" name="" title="PdfReportGenerator">PdfReportGenerator</a>
+                          </li>
+                    </ul>
+                </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>

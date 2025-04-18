@@ -1,0 +1,215 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/my_projects/Kursovaya_OOP_C#/PatentApplicationManager",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PatentApplicationManager.DAL.PatentRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PatentApplicationManager.DAL.PatentRepository.html",
+          "hash": "8yTU+urtJd2z9p0fXocC60Opy3XgApRwEa1O05qIdro="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PatentApplicationManager.DAL.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PatentApplicationManager.DAL.html",
+          "hash": "sWWt9yjXn34l+LJO8GM4Dgmn6M/kRjQrQW5iads8LVU="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PatentApplicationManager.Entities.PatentApplication.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PatentApplicationManager.Entities.PatentApplication.html",
+          "hash": "sFcZ9/a3+whnVEddpybaRzoTwouV9K+TCWbxi3sBnM0="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PatentApplicationManager.Entities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PatentApplicationManager.Entities.html",
+          "hash": "aqws0AGJf3TxR2dTfQaskwU/G9twhIgCaFPu1SvzIeo="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PatentApplicationManager.MainForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PatentApplicationManager.MainForm.html",
+          "hash": "zSvYkVGtKm5LMtFkAa8ptWJonFtMaEbC3t75mPkCPZ4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PatentApplicationManager.UI.AddApplicationForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PatentApplicationManager.UI.AddApplicationForm.html",
+          "hash": "g+SH+LX8TG+L3IBNJyM9ePa/SjUmyBTL0y2nj+SFMvE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PatentApplicationManager.UI.EditApplicationForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PatentApplicationManager.UI.EditApplicationForm.html",
+          "hash": "o0W/1d9WZrq0SzKa2EeW17k/Xg4eiAdlMRgLb8CpezI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PatentApplicationManager.UI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PatentApplicationManager.UI.html",
+          "hash": "tJnY+yw/se36HomStRjVSnEkJzSu6x/ojWtegj6cT+Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PatentApplicationManager.Utils.PdfReportGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PatentApplicationManager.Utils.PdfReportGenerator.html",
+          "hash": "B+UBsgIRdzbmgp02sv+OkZ8uLKYj6t9L8/Kzd9tu0Rw="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PatentApplicationManager.Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PatentApplicationManager.Utils.html",
+          "hash": "6m0Q4ht+vGcntuZoU3qx1iN3/A0XyMZ/8nUwlnBUCSI="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PatentApplicationManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PatentApplicationManager.html",
+          "hash": "j9x9QGGvrcA/7D8yFxC9cNlNhjC5R5oVBqDK2+kT8lE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "QWdICSPUp2AkShA5yikTnjvqH9lkkYGlZTR1XLwONLs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidYamlHeader",
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "wUgCBAdIQMuOEGS74oT+/A2RxHEoXAm4No611HZxsyw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ConceptualDocumentProcessor disable incremental build because last build doesn't contain version .",
+          "incrementalPhase": "build",
+          "total_file_count": 1,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 11,
+          "skipped_file_count": 8
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
