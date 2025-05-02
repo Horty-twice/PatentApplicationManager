@@ -1,0 +1,939 @@
+### YamlMime:ManagedReference
+items:
+- uid: PatentApplicationManager.Entities.PatentApplication
+  commentId: T:PatentApplicationManager.Entities.PatentApplication
+  id: PatentApplication
+  parent: PatentApplicationManager.Entities
+  children:
+  - PatentApplicationManager.Entities.PatentApplication.#ctor
+  - PatentApplicationManager.Entities.PatentApplication.ApplicantName
+  - PatentApplicationManager.Entities.PatentApplication.ApplicationNumber
+  - PatentApplicationManager.Entities.PatentApplication.DecisionDate
+  - PatentApplicationManager.Entities.PatentApplication.ExpirationDate
+  - PatentApplicationManager.Entities.PatentApplication.FilingDate
+  - PatentApplicationManager.Entities.PatentApplication.Id
+  - PatentApplicationManager.Entities.PatentApplication.InventionTitle
+  - PatentApplicationManager.Entities.PatentApplication.Notes
+  - PatentApplicationManager.Entities.PatentApplication.PatentAttorneyName
+  - PatentApplicationManager.Entities.PatentApplication.PatentNumber
+  - PatentApplicationManager.Entities.PatentApplication.Status
+  langs:
+  - csharp
+  - vb
+  name: PatentApplication
+  nameWithType: PatentApplication
+  fullName: PatentApplicationManager.Entities.PatentApplication
+  type: Class
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/Entities/PatentApplication.cs
+    id: PatentApplication
+    path: Entities/PatentApplication.cs
+    startLine: 9
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.Entities
+  summary: "\nКласс, представляющий патентную заявку.\nСодержит все основные свойства, необходимые для учета патентных заявок,\nвключая информацию о заявителе, датах подачи и решения, статус и примечания.\n"
+  example: []
+  syntax:
+    content: public class PatentApplication
+    content.vb: Public Class PatentApplication
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: PatentApplicationManager.Entities.PatentApplication.Id
+  commentId: P:PatentApplicationManager.Entities.PatentApplication.Id
+  id: Id
+  parent: PatentApplicationManager.Entities.PatentApplication
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: PatentApplication.Id
+  fullName: PatentApplicationManager.Entities.PatentApplication.Id
+  type: Property
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/Entities/PatentApplication.cs
+    id: Id
+    path: Entities/PatentApplication.cs
+    startLine: 14
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.Entities
+  summary: "\nУникальный идентификатор заявки в системе\n"
+  example: []
+  syntax:
+    content: public int Id { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Id As Integer
+  overload: PatentApplicationManager.Entities.PatentApplication.Id*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.Entities.PatentApplication.ApplicationNumber
+  commentId: P:PatentApplicationManager.Entities.PatentApplication.ApplicationNumber
+  id: ApplicationNumber
+  parent: PatentApplicationManager.Entities.PatentApplication
+  langs:
+  - csharp
+  - vb
+  name: ApplicationNumber
+  nameWithType: PatentApplication.ApplicationNumber
+  fullName: PatentApplicationManager.Entities.PatentApplication.ApplicationNumber
+  type: Property
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/Entities/PatentApplication.cs
+    id: ApplicationNumber
+    path: Entities/PatentApplication.cs
+    startLine: 19
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.Entities
+  summary: "\nРегистрационный номер заявки\n"
+  example: []
+  syntax:
+    content: public string ApplicationNumber { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ApplicationNumber As String
+  overload: PatentApplicationManager.Entities.PatentApplication.ApplicationNumber*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.Entities.PatentApplication.FilingDate
+  commentId: P:PatentApplicationManager.Entities.PatentApplication.FilingDate
+  id: FilingDate
+  parent: PatentApplicationManager.Entities.PatentApplication
+  langs:
+  - csharp
+  - vb
+  name: FilingDate
+  nameWithType: PatentApplication.FilingDate
+  fullName: PatentApplicationManager.Entities.PatentApplication.FilingDate
+  type: Property
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/Entities/PatentApplication.cs
+    id: FilingDate
+    path: Entities/PatentApplication.cs
+    startLine: 24
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.Entities
+  summary: "\nДата подачи заявки\n"
+  example: []
+  syntax:
+    content: public DateTime FilingDate { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property FilingDate As Date
+  overload: PatentApplicationManager.Entities.PatentApplication.FilingDate*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.Entities.PatentApplication.InventionTitle
+  commentId: P:PatentApplicationManager.Entities.PatentApplication.InventionTitle
+  id: InventionTitle
+  parent: PatentApplicationManager.Entities.PatentApplication
+  langs:
+  - csharp
+  - vb
+  name: InventionTitle
+  nameWithType: PatentApplication.InventionTitle
+  fullName: PatentApplicationManager.Entities.PatentApplication.InventionTitle
+  type: Property
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/Entities/PatentApplication.cs
+    id: InventionTitle
+    path: Entities/PatentApplication.cs
+    startLine: 29
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.Entities
+  summary: "\nНазвание изобретения\n"
+  example: []
+  syntax:
+    content: public string InventionTitle { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property InventionTitle As String
+  overload: PatentApplicationManager.Entities.PatentApplication.InventionTitle*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.Entities.PatentApplication.ApplicantName
+  commentId: P:PatentApplicationManager.Entities.PatentApplication.ApplicantName
+  id: ApplicantName
+  parent: PatentApplicationManager.Entities.PatentApplication
+  langs:
+  - csharp
+  - vb
+  name: ApplicantName
+  nameWithType: PatentApplication.ApplicantName
+  fullName: PatentApplicationManager.Entities.PatentApplication.ApplicantName
+  type: Property
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/Entities/PatentApplication.cs
+    id: ApplicantName
+    path: Entities/PatentApplication.cs
+    startLine: 34
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.Entities
+  summary: "\nПолное имя заявителя\n"
+  example: []
+  syntax:
+    content: public string ApplicantName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ApplicantName As String
+  overload: PatentApplicationManager.Entities.PatentApplication.ApplicantName*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.Entities.PatentApplication.PatentAttorneyName
+  commentId: P:PatentApplicationManager.Entities.PatentApplication.PatentAttorneyName
+  id: PatentAttorneyName
+  parent: PatentApplicationManager.Entities.PatentApplication
+  langs:
+  - csharp
+  - vb
+  name: PatentAttorneyName
+  nameWithType: PatentApplication.PatentAttorneyName
+  fullName: PatentApplicationManager.Entities.PatentApplication.PatentAttorneyName
+  type: Property
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/Entities/PatentApplication.cs
+    id: PatentAttorneyName
+    path: Entities/PatentApplication.cs
+    startLine: 39
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.Entities
+  summary: "\nИмя патентного поверенного\n"
+  example: []
+  syntax:
+    content: public string PatentAttorneyName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property PatentAttorneyName As String
+  overload: PatentApplicationManager.Entities.PatentApplication.PatentAttorneyName*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.Entities.PatentApplication.Status
+  commentId: P:PatentApplicationManager.Entities.PatentApplication.Status
+  id: Status
+  parent: PatentApplicationManager.Entities.PatentApplication
+  langs:
+  - csharp
+  - vb
+  name: Status
+  nameWithType: PatentApplication.Status
+  fullName: PatentApplicationManager.Entities.PatentApplication.Status
+  type: Property
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/Entities/PatentApplication.cs
+    id: Status
+    path: Entities/PatentApplication.cs
+    startLine: 44
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.Entities
+  summary: "\nТекущий статус заявки\n"
+  example: []
+  syntax:
+    content: public string Status { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Status As String
+  overload: PatentApplicationManager.Entities.PatentApplication.Status*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.Entities.PatentApplication.DecisionDate
+  commentId: P:PatentApplicationManager.Entities.PatentApplication.DecisionDate
+  id: DecisionDate
+  parent: PatentApplicationManager.Entities.PatentApplication
+  langs:
+  - csharp
+  - vb
+  name: DecisionDate
+  nameWithType: PatentApplication.DecisionDate
+  fullName: PatentApplicationManager.Entities.PatentApplication.DecisionDate
+  type: Property
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/Entities/PatentApplication.cs
+    id: DecisionDate
+    path: Entities/PatentApplication.cs
+    startLine: 49
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.Entities
+  summary: "\nДата принятия решения по заявке\n"
+  example: []
+  syntax:
+    content: public DateTime? DecisionDate { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public Property DecisionDate As Date?
+  overload: PatentApplicationManager.Entities.PatentApplication.DecisionDate*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.Entities.PatentApplication.PatentNumber
+  commentId: P:PatentApplicationManager.Entities.PatentApplication.PatentNumber
+  id: PatentNumber
+  parent: PatentApplicationManager.Entities.PatentApplication
+  langs:
+  - csharp
+  - vb
+  name: PatentNumber
+  nameWithType: PatentApplication.PatentNumber
+  fullName: PatentApplicationManager.Entities.PatentApplication.PatentNumber
+  type: Property
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/Entities/PatentApplication.cs
+    id: PatentNumber
+    path: Entities/PatentApplication.cs
+    startLine: 54
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.Entities
+  summary: "\nНомер выданного патента\n"
+  example: []
+  syntax:
+    content: public string PatentNumber { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property PatentNumber As String
+  overload: PatentApplicationManager.Entities.PatentApplication.PatentNumber*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.Entities.PatentApplication.ExpirationDate
+  commentId: P:PatentApplicationManager.Entities.PatentApplication.ExpirationDate
+  id: ExpirationDate
+  parent: PatentApplicationManager.Entities.PatentApplication
+  langs:
+  - csharp
+  - vb
+  name: ExpirationDate
+  nameWithType: PatentApplication.ExpirationDate
+  fullName: PatentApplicationManager.Entities.PatentApplication.ExpirationDate
+  type: Property
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/Entities/PatentApplication.cs
+    id: ExpirationDate
+    path: Entities/PatentApplication.cs
+    startLine: 59
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.Entities
+  summary: "\nДата истечения срока действия патента\n"
+  example: []
+  syntax:
+    content: public DateTime? ExpirationDate { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public Property ExpirationDate As Date?
+  overload: PatentApplicationManager.Entities.PatentApplication.ExpirationDate*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.Entities.PatentApplication.Notes
+  commentId: P:PatentApplicationManager.Entities.PatentApplication.Notes
+  id: Notes
+  parent: PatentApplicationManager.Entities.PatentApplication
+  langs:
+  - csharp
+  - vb
+  name: Notes
+  nameWithType: PatentApplication.Notes
+  fullName: PatentApplicationManager.Entities.PatentApplication.Notes
+  type: Property
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/Entities/PatentApplication.cs
+    id: Notes
+    path: Entities/PatentApplication.cs
+    startLine: 64
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.Entities
+  summary: "\nДополнительные примечания к заявке\n"
+  example: []
+  syntax:
+    content: public string Notes { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Notes As String
+  overload: PatentApplicationManager.Entities.PatentApplication.Notes*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.Entities.PatentApplication.#ctor
+  commentId: M:PatentApplicationManager.Entities.PatentApplication.#ctor
+  id: '#ctor'
+  parent: PatentApplicationManager.Entities.PatentApplication
+  langs:
+  - csharp
+  - vb
+  name: PatentApplication()
+  nameWithType: PatentApplication.PatentApplication()
+  fullName: PatentApplicationManager.Entities.PatentApplication.PatentApplication()
+  type: Constructor
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/Entities/PatentApplication.cs
+    id: .ctor
+    path: Entities/PatentApplication.cs
+    startLine: 69
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.Entities
+  summary: "\nИнициализирует новый экземпляр класса <xref href=\"PatentApplicationManager.Entities.PatentApplication\" data-throw-if-not-resolved=\"false\"></xref>\n"
+  example: []
+  syntax:
+    content: public PatentApplication()
+    content.vb: Public Sub New
+  overload: PatentApplicationManager.Entities.PatentApplication.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: PatentApplicationManager.Entities
+  commentId: N:PatentApplicationManager.Entities
+  name: PatentApplicationManager.Entities
+  nameWithType: PatentApplicationManager.Entities
+  fullName: PatentApplicationManager.Entities
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PatentApplicationManager.Entities.PatentApplication.Id*
+  commentId: Overload:PatentApplicationManager.Entities.PatentApplication.Id
+  name: Id
+  nameWithType: PatentApplication.Id
+  fullName: PatentApplicationManager.Entities.PatentApplication.Id
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: PatentApplicationManager.Entities.PatentApplication.ApplicationNumber*
+  commentId: Overload:PatentApplicationManager.Entities.PatentApplication.ApplicationNumber
+  name: ApplicationNumber
+  nameWithType: PatentApplication.ApplicationNumber
+  fullName: PatentApplicationManager.Entities.PatentApplication.ApplicationNumber
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: PatentApplicationManager.Entities.PatentApplication.FilingDate*
+  commentId: Overload:PatentApplicationManager.Entities.PatentApplication.FilingDate
+  name: FilingDate
+  nameWithType: PatentApplication.FilingDate
+  fullName: PatentApplicationManager.Entities.PatentApplication.FilingDate
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+- uid: PatentApplicationManager.Entities.PatentApplication.InventionTitle*
+  commentId: Overload:PatentApplicationManager.Entities.PatentApplication.InventionTitle
+  name: InventionTitle
+  nameWithType: PatentApplication.InventionTitle
+  fullName: PatentApplicationManager.Entities.PatentApplication.InventionTitle
+- uid: PatentApplicationManager.Entities.PatentApplication.ApplicantName*
+  commentId: Overload:PatentApplicationManager.Entities.PatentApplication.ApplicantName
+  name: ApplicantName
+  nameWithType: PatentApplication.ApplicantName
+  fullName: PatentApplicationManager.Entities.PatentApplication.ApplicantName
+- uid: PatentApplicationManager.Entities.PatentApplication.PatentAttorneyName*
+  commentId: Overload:PatentApplicationManager.Entities.PatentApplication.PatentAttorneyName
+  name: PatentAttorneyName
+  nameWithType: PatentApplication.PatentAttorneyName
+  fullName: PatentApplicationManager.Entities.PatentApplication.PatentAttorneyName
+- uid: PatentApplicationManager.Entities.PatentApplication.Status*
+  commentId: Overload:PatentApplicationManager.Entities.PatentApplication.Status
+  name: Status
+  nameWithType: PatentApplication.Status
+  fullName: PatentApplicationManager.Entities.PatentApplication.Status
+- uid: PatentApplicationManager.Entities.PatentApplication.DecisionDate*
+  commentId: Overload:PatentApplicationManager.Entities.PatentApplication.DecisionDate
+  name: DecisionDate
+  nameWithType: PatentApplication.DecisionDate
+  fullName: PatentApplicationManager.Entities.PatentApplication.DecisionDate
+- uid: System.Nullable{System.DateTime}
+  commentId: T:System.Nullable{System.DateTime}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<DateTime>
+  nameWithType: Nullable<DateTime>
+  fullName: System.Nullable<System.DateTime>
+  nameWithType.vb: Nullable(Of DateTime)
+  fullName.vb: System.Nullable(Of System.DateTime)
+  name.vb: Nullable(Of DateTime)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: PatentApplicationManager.Entities.PatentApplication.PatentNumber*
+  commentId: Overload:PatentApplicationManager.Entities.PatentApplication.PatentNumber
+  name: PatentNumber
+  nameWithType: PatentApplication.PatentNumber
+  fullName: PatentApplicationManager.Entities.PatentApplication.PatentNumber
+- uid: PatentApplicationManager.Entities.PatentApplication.ExpirationDate*
+  commentId: Overload:PatentApplicationManager.Entities.PatentApplication.ExpirationDate
+  name: ExpirationDate
+  nameWithType: PatentApplication.ExpirationDate
+  fullName: PatentApplicationManager.Entities.PatentApplication.ExpirationDate
+- uid: PatentApplicationManager.Entities.PatentApplication.Notes*
+  commentId: Overload:PatentApplicationManager.Entities.PatentApplication.Notes
+  name: Notes
+  nameWithType: PatentApplication.Notes
+  fullName: PatentApplicationManager.Entities.PatentApplication.Notes
+- uid: PatentApplicationManager.Entities.PatentApplication
+  commentId: T:PatentApplicationManager.Entities.PatentApplication
+  parent: PatentApplicationManager.Entities
+  name: PatentApplication
+  nameWithType: PatentApplication
+  fullName: PatentApplicationManager.Entities.PatentApplication
+- uid: PatentApplicationManager.Entities.PatentApplication.#ctor*
+  commentId: Overload:PatentApplicationManager.Entities.PatentApplication.#ctor
+  name: PatentApplication
+  nameWithType: PatentApplication.PatentApplication
+  fullName: PatentApplicationManager.Entities.PatentApplication.PatentApplication

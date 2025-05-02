@@ -1,0 +1,30 @@
+### YamlMime:TableOfContent
+- uid: PatentApplicationManager
+  name: PatentApplicationManager
+  items:
+  - uid: PatentApplicationManager.MainForm
+    name: MainForm
+- uid: PatentApplicationManager.DAL
+  name: PatentApplicationManager.DAL
+  items:
+  - uid: PatentApplicationManager.DAL.DatabaseManager
+    name: DatabaseManager
+  - uid: PatentApplicationManager.DAL.PatentRepository
+    name: PatentRepository
+- uid: PatentApplicationManager.Entities
+  name: PatentApplicationManager.Entities
+  items:
+  - uid: PatentApplicationManager.Entities.PatentApplication
+    name: PatentApplication
+- uid: PatentApplicationManager.UI
+  name: PatentApplicationManager.UI
+  items:
+  - uid: PatentApplicationManager.UI.AddApplicationForm
+    name: AddApplicationForm
+  - uid: PatentApplicationManager.UI.EditApplicationForm
+    name: EditApplicationForm
+- uid: PatentApplicationManager.Utils
+  name: PatentApplicationManager.Utils
+  items:
+  - uid: PatentApplicationManager.Utils.PdfReportGenerator
+    name: PdfReportGenerator

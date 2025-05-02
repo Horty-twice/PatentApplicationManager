@@ -1,0 +1,28 @@
+### YamlMime:ManagedReference
+items:
+- uid: PatentApplicationManager.DAL
+  commentId: N:PatentApplicationManager.DAL
+  id: PatentApplicationManager.DAL
+  children:
+  - PatentApplicationManager.DAL.DatabaseManager
+  - PatentApplicationManager.DAL.PatentRepository
+  langs:
+  - csharp
+  - vb
+  name: PatentApplicationManager.DAL
+  nameWithType: PatentApplicationManager.DAL
+  fullName: PatentApplicationManager.DAL
+  type: Namespace
+  assemblies:
+  - PatentApplicationManager
+references:
+- uid: PatentApplicationManager.DAL.DatabaseManager
+  commentId: T:PatentApplicationManager.DAL.DatabaseManager
+  name: DatabaseManager
+  nameWithType: DatabaseManager
+  fullName: PatentApplicationManager.DAL.DatabaseManager
+- uid: PatentApplicationManager.DAL.PatentRepository
+  commentId: T:PatentApplicationManager.DAL.PatentRepository
+  name: PatentRepository
+  nameWithType: PatentRepository
+  fullName: PatentApplicationManager.DAL.PatentRepository

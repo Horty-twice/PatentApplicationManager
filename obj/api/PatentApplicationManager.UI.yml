@@ -1,0 +1,28 @@
+### YamlMime:ManagedReference
+items:
+- uid: PatentApplicationManager.UI
+  commentId: N:PatentApplicationManager.UI
+  id: PatentApplicationManager.UI
+  children:
+  - PatentApplicationManager.UI.AddApplicationForm
+  - PatentApplicationManager.UI.EditApplicationForm
+  langs:
+  - csharp
+  - vb
+  name: PatentApplicationManager.UI
+  nameWithType: PatentApplicationManager.UI
+  fullName: PatentApplicationManager.UI
+  type: Namespace
+  assemblies:
+  - PatentApplicationManager
+references:
+- uid: PatentApplicationManager.UI.AddApplicationForm
+  commentId: T:PatentApplicationManager.UI.AddApplicationForm
+  name: AddApplicationForm
+  nameWithType: AddApplicationForm
+  fullName: PatentApplicationManager.UI.AddApplicationForm
+- uid: PatentApplicationManager.UI.EditApplicationForm
+  commentId: T:PatentApplicationManager.UI.EditApplicationForm
+  name: EditApplicationForm
+  nameWithType: EditApplicationForm
+  fullName: PatentApplicationManager.UI.EditApplicationForm

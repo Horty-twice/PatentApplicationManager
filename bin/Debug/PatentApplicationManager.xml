@@ -1,0 +1,614 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PatentApplicationManager</name>
+    </assembly>
+    <members>
+        <member name="T:PatentApplicationManager.DAL.DatabaseManager">
+            <summary>
+            Предоставляет методы для управления файлом базы данных
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.DAL.DatabaseManager.#ctor(System.String)">
+            <summary>
+            Инициализирует новый экземпляр менеджера БД
+            </summary>
+            <param name="dbPath">Путь к файлу базы данных (по умолчанию patents.db)</param>
+        </member>
+        <member name="M:PatentApplicationManager.DAL.DatabaseManager.DatabaseExists">
+            <summary>
+            Проверяет существование файла базы данных
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.DAL.DatabaseManager.CreateDatabase">
+            <summary>
+            Создает новую базу данных с таблицей PatentApplications
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Возникает при ошибках создания БД</exception>
+        </member>
+        <member name="M:PatentApplicationManager.DAL.DatabaseManager.DeleteDatabase">
+            <summary>
+            Удаляет файл базы данных
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.DAL.DatabaseManager.BackupDatabase(System.String)">
+            <summary>
+            Создает резервную копию базы данных
+            </summary>
+            <param name="backupPath">Путь для сохранения резервной копии</param>
+            <exception cref="T:System.IO.FileNotFoundException">Возникает если исходная БД не найдена</exception>
+        </member>
+        <member name="M:PatentApplicationManager.DAL.DatabaseManager.RestoreDatabase(System.String)">
+            <summary>
+            Восстанавливает базу данных из резервной копии
+            </summary>
+            <param name="backupPath">Путь к файлу резервной копии</param>
+            <exception cref="T:System.IO.FileNotFoundException">Возникает если файл копии не найден</exception>
+        </member>
+        <member name="T:PatentApplicationManager.DAL.PatentRepository">
+            <summary>
+            Репозиторий для работы с патентными заявками в базе данных SQLite
+            </summary>
+        </member>
+        <member name="F:PatentApplicationManager.DAL.PatentRepository._connectionString">
+            <summary>
+            Строка подключения к базе данных
+            </summary>
+        </member>
+        <member name="F:PatentApplicationManager.DAL.PatentRepository._databaseFileName">
+            <summary>
+            Имя файла базы данных
+            </summary>
+        </member>
+        <member name="F:PatentApplicationManager.DAL.PatentRepository._logFilePath">
+            <summary>
+            Путь к файлу лога ошибок
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.DAL.PatentRepository.#ctor">
+            <summary>
+            Инициализирует новый экземпляр класса <see cref="T:PatentApplicationManager.DAL.PatentRepository"/>
+            </summary>
+            <remarks>
+            Проверяет существование файла БД и создает его при необходимости
+            </remarks>
+        </member>
+        <member name="M:PatentApplicationManager.DAL.PatentRepository.#ctor(System.String)">
+            <summary>
+            Инициализирует новый экземпляр класса <see cref="T:PatentApplicationManager.DAL.PatentRepository"/> с указанием пути к БД
+            </summary>
+            <param name="dbPath">Путь к файлу базы данных. Если null, используется значение по умолчанию.</param>
+            <remarks>
+            Проверяет существование файла БД и создает его при необходимости
+            </remarks>
+        </member>
+        <member name="M:PatentApplicationManager.DAL.PatentRepository.FilterByStatus(System.String)">
+            <summary>
+            Фильтрует заявки по указанному статусу
+            </summary>
+            <param name="status">Статус для фильтрации</param>
+            <returns>Отфильтрованный список заявок</returns>
+        </member>
+        <member name="M:PatentApplicationManager.DAL.PatentRepository.SortByFilingDate(System.Boolean)">
+            <summary>
+            Сортирует заявки по дате подачи
+            </summary>
+            <param name="ascending">True - по возрастанию, False - по убыванию</param>
+            <returns>Отсортированный список заявок</returns>
+        </member>
+        <member name="M:PatentApplicationManager.DAL.PatentRepository.CreateDatabase">
+            <summary>
+            Создает новую базу данных SQLite с таблицей для хранения патентных заявок
+            </summary>
+            <exception cref="T:System.Data.SQLite.SQLiteException">Возникает при ошибках выполнения SQL-запроса</exception>
+            <exception cref="T:System.IO.IOException">Возникает при проблемах с доступом к файлу БД</exception>
+        </member>
+        <member name="M:PatentApplicationManager.DAL.PatentRepository.AddPatentApplication(PatentApplicationManager.Entities.PatentApplication)">
+            <summary>
+            Добавляет новую патентную заявку в базу данных
+            </summary>
+            <param name="application">Объект патентной заявки для добавления</param>
+            <returns>ID добавленной заявки или 0 при ошибке</returns>
+            <exception cref="T:System.Data.SQLite.SQLiteException">Возникает при ошибках выполнения SQL-запроса</exception>
+        </member>
+        <member name="M:PatentApplicationManager.DAL.PatentRepository.GetAllPatentApplications">
+            <summary>
+            Получает список всех патентных заявок из базы данных
+            </summary>
+            <returns>Список объектов <see cref="T:PatentApplicationManager.Entities.PatentApplication"/> или пустой список при ошибке</returns>
+            <exception cref="T:System.Data.SQLite.SQLiteException">Возникает при ошибках выполнения SQL-запроса</exception>
+        </member>
+        <member name="M:PatentApplicationManager.DAL.PatentRepository.GetPatentApplicationById(System.Int32)">
+            <summary>
+            Получает патентную заявку по указанному ID
+            </summary>
+            <param name="id">ID искомой заявки</param>
+            <returns>Объект <see cref="T:PatentApplicationManager.Entities.PatentApplication"/> или null, если заявка не найдена</returns>
+            <exception cref="T:System.Data.SQLite.SQLiteException">Возникает при ошибках выполнения SQL-запроса</exception>
+        </member>
+        <member name="M:PatentApplicationManager.DAL.PatentRepository.UpdatePatentApplication(PatentApplicationManager.Entities.PatentApplication)">
+            <summary>
+            Обновляет данные патентной заявки в базе данных
+            </summary>
+            <param name="application">Объект <see cref="T:PatentApplicationManager.Entities.PatentApplication"/> с обновленными данными</param>
+            <exception cref="T:System.Data.SQLite.SQLiteException">Возникает при ошибках выполнения SQL-запроса</exception>
+            <exception cref="T:System.ArgumentException">Возникает если ID заявки не указан</exception>
+        </member>
+        <member name="M:PatentApplicationManager.DAL.PatentRepository.DeletePatentApplication(System.Int32)">
+            <summary>
+            Удаляет патентную заявку по указанному ID
+            </summary>
+            <param name="id">ID заявки для удаления</param>
+            <exception cref="T:System.Data.SQLite.SQLiteException">Возникает при ошибках выполнения SQL-запроса</exception>
+        </member>
+        <member name="M:PatentApplicationManager.DAL.PatentRepository.LogError(System.String)">
+            <summary>
+            Записывает сообщение об ошибке в лог-файл
+            </summary>
+            <param name="message">Сообщение для записи в лог</param>
+        </member>
+        <member name="T:PatentApplicationManager.Entities.PatentApplication">
+            <summary>
+            Класс, представляющий патентную заявку.
+            Содержит все основные свойства, необходимые для учета патентных заявок,
+            включая информацию о заявителе, датах подачи и решения, статус и примечания.
+            </summary>
+        </member>
+        <member name="P:PatentApplicationManager.Entities.PatentApplication.Id">
+            <summary>
+            Уникальный идентификатор заявки в системе
+            </summary>
+        </member>
+        <member name="P:PatentApplicationManager.Entities.PatentApplication.ApplicationNumber">
+            <summary>
+            Регистрационный номер заявки
+            </summary>
+        </member>
+        <member name="P:PatentApplicationManager.Entities.PatentApplication.FilingDate">
+            <summary>
+            Дата подачи заявки
+            </summary>
+        </member>
+        <member name="P:PatentApplicationManager.Entities.PatentApplication.InventionTitle">
+            <summary>
+            Название изобретения
+            </summary>
+        </member>
+        <member name="P:PatentApplicationManager.Entities.PatentApplication.ApplicantName">
+            <summary>
+            Полное имя заявителя
+            </summary>
+        </member>
+        <member name="P:PatentApplicationManager.Entities.PatentApplication.PatentAttorneyName">
+            <summary>
+            Имя патентного поверенного
+            </summary>
+        </member>
+        <member name="P:PatentApplicationManager.Entities.PatentApplication.Status">
+            <summary>
+            Текущий статус заявки
+            </summary>
+        </member>
+        <member name="P:PatentApplicationManager.Entities.PatentApplication.DecisionDate">
+            <summary>
+            Дата принятия решения по заявке
+            </summary>
+        </member>
+        <member name="P:PatentApplicationManager.Entities.PatentApplication.PatentNumber">
+            <summary>
+            Номер выданного патента
+            </summary>
+        </member>
+        <member name="P:PatentApplicationManager.Entities.PatentApplication.ExpirationDate">
+            <summary>
+            Дата истечения срока действия патента
+            </summary>
+        </member>
+        <member name="P:PatentApplicationManager.Entities.PatentApplication.Notes">
+            <summary>
+            Дополнительные примечания к заявке
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.Entities.PatentApplication.#ctor">
+            <summary>
+            Инициализирует новый экземпляр класса <see cref="T:PatentApplicationManager.Entities.PatentApplication"/>
+            </summary>
+        </member>
+        <member name="T:PatentApplicationManager.UI.AddApplicationForm">
+            <summary>
+            Форма для добавления новой патентной заявки.
+            Предоставляет интерфейс для ввода всех необходимых данных о патентной заявке
+            и выполняет валидацию введенных данных перед сохранением.
+            </summary>
+        </member>
+        <member name="F:PatentApplicationManager.UI.AddApplicationForm._repository">
+            <summary>
+            Репозиторий для работы с данными патентных заявок в базе данных
+            Предоставляет методы для выполнения CRUD-операций с патентными заявками.
+            Использует SQLite в качестве хранилища данных.
+            Инициализируется при создании формы и используется для сохранения изменений.
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.UI.AddApplicationForm.#ctor">
+            <summary>
+            Инициализирует новый экземпляр формы добавления заявки
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.UI.AddApplicationForm.ValidateInput">
+            <summary>
+            Проверяет корректность введенных данных
+            </summary>
+            <returns>
+            true - если все данные валидны, 
+            false - если найдены ошибки (сообщение об ошибке отображается в lblError)
+            </returns>
+        </member>
+        <member name="M:PatentApplicationManager.UI.AddApplicationForm.btnSave_Click(System.Object,System.EventArgs)">
+            <summary>
+            Обработчик нажатия кнопки "Сохранить"
+            </summary>
+            <param name="sender">Источник события</param>
+            <param name="e">Данные события</param>
+        </member>
+        <member name="M:PatentApplicationManager.UI.AddApplicationForm.btnCancel_Click(System.Object,System.EventArgs)">
+            <summary>
+            Обработчик нажатия кнопки "Отмена"
+            </summary>
+            <param name="sender">Источник события</param>
+            <param name="e">Данные события</param>
+        </member>
+        <member name="F:PatentApplicationManager.UI.AddApplicationForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.UI.AddApplicationForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PatentApplicationManager.UI.AddApplicationForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:PatentApplicationManager.UI.EditApplicationForm">
+            <summary>
+            Форма для редактирования существующей патентной заявки.
+            Позволяет изменять все данные патентной заявки с выполнением валидации.
+            Наследует базовую функциональность валидации от AddApplicationForm.
+            </summary>
+        </member>
+        <member name="F:PatentApplicationManager.UI.EditApplicationForm._repository">
+            <summary>
+            Репозиторий для работы с данными патентных заявок
+            Обеспечивает доступ к базе данных для операций обновления информации о заявках.
+            Инициализируется при создании формы.
+            </summary>
+        </member>
+        <member name="F:PatentApplicationManager.UI.EditApplicationForm._application">
+            <summary>
+            Редактируемая патентная заявка.
+            Содержит исходные данные заявки перед редактированием.
+            Все изменения формы применяются к этому объекту перед сохранением.
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.UI.EditApplicationForm.#ctor(PatentApplicationManager.Entities.PatentApplication)">
+            <summary>
+            Инициализирует новый экземпляр формы редактирования
+            </summary>
+            <param name="application">Объект патентной заявки для редактирования</param>
+            <exception cref="T:System.ArgumentNullException">Если application равен null</exception>
+        </member>
+        <member name="M:PatentApplicationManager.UI.EditApplicationForm.ValidateInput">
+            <summary>
+            Проверяет корректность введенных данных
+            </summary>
+            <returns>
+            true - если все данные валидны,
+            false - если найдены ошибки (сообщение об ошибке отображается в lblError)
+            </returns>
+        </member>
+        <member name="M:PatentApplicationManager.UI.EditApplicationForm.btnSave_Click(System.Object,System.EventArgs)">
+            <summary>
+            Обработчик нажатия кнопки "Сохранить"
+            </summary>
+            <param name="sender">Источник события</param>
+            <param name="e">Данные события</param>
+        </member>
+        <member name="M:PatentApplicationManager.UI.EditApplicationForm.btnCancel_Click(System.Object,System.EventArgs)">
+            <summary>
+            Обработчик нажатия кнопки "Отмена"
+            </summary>
+            <param name="sender">Источник события</param>
+            <param name="e">Данные события</param>
+        </member>
+        <member name="F:PatentApplicationManager.UI.EditApplicationForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.UI.EditApplicationForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PatentApplicationManager.UI.EditApplicationForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:PatentApplicationManager.MainForm">
+            <summary>
+            Главная форма приложения для управления патентными заявками.
+            Предоставляет интерфейс для просмотра, добавления, редактирования и удаления заявок,
+            а также генерации отчетов в PDF-формате.
+            </summary>
+        </member>
+        <member name="F:PatentApplicationManager.MainForm._repository">
+            <summary>
+            Репозиторий для работы с данными патентных заявок
+            </summary>
+        </member>
+        <member name="F:PatentApplicationManager.MainForm._sortDirections">
+            <summary>
+            Поле для хранения состояния сортировки
+            </summary>
+        </member>
+        <member name="F:PatentApplicationManager.MainForm._placeholderText">
+            <summary>
+            Подсказка для элемента txtSearch
+            </summary>
+        </member>
+        <member name="F:PatentApplicationManager.MainForm._isPlaceholderActive">
+            <summary>
+            Флаг, указывающий активна ли в данный момент подсказка в поле поиска
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.SetPlaceholder">
+            <summary>
+            Устанавливает подсказку в поле поиска
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.RemovePlaceholder">
+            <summary>
+            Удаляет подсказку из поля поиска
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.txtSearch_Enter(System.Object,System.EventArgs)">
+            <summary>
+            Обработчик очистки подсказки для элемента txtSearch
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.txtSearch_Leave(System.Object,System.EventArgs)">
+            <summary>
+            Обработчик вывода подсказки для элемента txtSearch
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.#ctor">
+            <summary>
+            Инициализирует новый экземпляр главной формы
+            Устанавливает начальное состояние формы (развернутое на весь экран)
+            и загружает список патентных заявок.
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.MainForm_Load(System.Object,System.EventArgs)">
+            <summary>
+            Обработчик события загрузки формы
+            </summary>
+            <param name="sender">Источник события</param>
+            <param name="e">Данные события</param>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.LoadPatentApplications">
+            <summary>
+            Загружает список патентных заявок в DataGridView
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.DgvPatentApplications_ColumnHeaderMouseClick(System.Object,System.Windows.Forms.DataGridViewCellMouseEventArgs)">
+            <summary>
+            Обработчик клика по заголовку колонки DataGridView
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.SortData(System.String,System.Boolean,System.Int32)">
+            <summary>
+            Сортирует данные в указанной колонке
+            </summary>
+            <param name="columnName">Имя колонки для сортировки</param>
+            <param name="ascending">Направление сортировки (true - по возрастанию)</param>
+            <param name="columnIndex">Индекс колонки для отображения значка сортировки</param>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.TxtSearch_TextChanged(System.Object,System.EventArgs)">
+            <summary>
+            Обработчик изменения текста в поле поиска
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.AddDataColumn(System.String,System.String,System.Boolean,System.Boolean,System.Nullable{System.Int32})">
+            <summary>
+            Добавляет столбец в DataGridView с указанными параметрами
+            </summary>
+            <param name="name">Имя столбца и привязки данных</param>
+            <param name="headerText">Текст заголовка столбца</param>
+            <param name="visible">Видимость столбца</param>
+            <param name="fill">Заполнять ли доступное пространство</param>
+            <param name="width">Ширина столбца в пикселях (если не задано, используется авторазмер)</param>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.btnAddApplication_Click(System.Object,System.EventArgs)">
+            <summary>
+            Обработчик нажатия кнопки "Добавить заявку"
+            </summary>
+            <param name="sender">Источник события</param>
+            <param name="e">Данные события</param>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.dgvPatentApplications_CellClick(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+            <summary>
+            Обработчик нажатия на ячейки DataGridView
+            </summary>
+            <param name="sender">Источник события</param>
+            <param name="e">Данные события, содержащие информацию о нажатой ячейке</param>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.IsEditButtonClicked(System.Windows.Forms.DataGridViewCellEventArgs)">
+            <summary>
+            Проверяет, была ли нажата кнопка "Редактировать"
+            </summary>
+            <param name="e">Данные события CellClick</param>
+            <returns>True если нажата кнопка редактирования</returns>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.IsDeleteButtonClicked(System.Windows.Forms.DataGridViewCellEventArgs)">
+            <summary>
+            Проверяет, была ли нажата кнопка "Удалить"
+            </summary>
+            <param name="e">Данные события CellClick</param>
+            <returns>True если нажата кнопка удаления</returns>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.EditSelectedApplication(System.Int32)">
+            <summary>
+            Открывает форму редактирования для выбранной заявки
+            </summary>
+            <param name="rowIndex">Индекс строки с заявкой</param>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.DeleteSelectedApplication(System.Int32)">
+            <summary>
+            Удаляет выбранную заявку после подтверждения
+            </summary>
+            <param name="rowIndex">Индекс строки с заявкой</param>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.GetApplicationId(System.Int32)">
+            <summary>
+            Получает ID заявки из указанной строки DataGridView
+            </summary>
+            <param name="rowIndex">Индекс строки</param>
+            <returns>ID заявки</returns>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.ShowError(System.String)">
+            <summary>
+            Отображает сообщение об ошибке в интерфейсе
+            </summary>
+            <param name="message">Текст сообщения об ошибке</param>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.btnGenerateReport_Click(System.Object,System.EventArgs)">
+            <summary>
+            Обработчик нажатия кнопки "Сформировать отчет"
+            </summary>
+            <param name="sender">Источник события</param>
+            <param name="e">Данные события</param>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.btnCreateDatabase_Click(System.Object,System.EventArgs)">
+            <summary>
+            Обработчик кнопки создания новой БД
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.btnDeleteDatabase_Click(System.Object,System.EventArgs)">
+            <summary>
+            Обработчик кнопки удаления БД
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.btnSearch_Click(System.Object,System.EventArgs)">
+            <summary>
+            Обработчик кнопки поиска заявок
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.btnExportDatabase_Click_1(System.Object,System.EventArgs)">
+            <summary>
+            Экспорт текущей БД в выбранный файл
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.ExportToCsv(System.String)">
+            <summary>
+            Экспорт в CSV
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.ExportToJson(System.String)">
+            <summary>
+            Экспорт в JSON
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.BtnImportDatabase_Click(System.Object,System.EventArgs)">
+            <summary>
+            Обработчик нажатия кнопки "Импорт БД"
+            </summary>
+            <param name="sender">Источник события</param>
+            <param name="e">Данные события</param>
+            <remarks>
+            Выполняет восстановление базы данных из резервной копии с полной проверкой:
+            1. Проверяет существование выбранного файла
+            2. Валидирует структуру SQLite базы
+            3. Проверяет наличие нужной таблицы
+            4. Создает резервную копию текущей БД
+            5. Выполняет восстановление с обработкой ошибок
+            6. Логирует все операции
+            </remarks>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.LogOperation(System.String)">
+            <summary>
+            Логирование операций с базой данных
+            </summary>
+            <param name="message">Сообщение для логирования</param>
+        </member>
+        <member name="F:PatentApplicationManager.MainForm.components">
+            <summary>
+            Обязательная переменная конструктора.
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.Dispose(System.Boolean)">
+            <summary>
+            Освободить все используемые ресурсы.
+            </summary>
+            <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
+        </member>
+        <member name="M:PatentApplicationManager.MainForm.InitializeComponent">
+            <summary>
+            Требуемый метод для поддержки конструктора — не изменяйте 
+            содержимое этого метода с помощью редактора кода.
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.Program.Main">
+            <summary>
+            Главная точка входа для приложения.
+            </summary>
+        </member>
+        <member name="T:PatentApplicationManager.Utils.PdfReportGenerator">
+            <summary>
+            Генератор PDF-отчетов для патентных заявок
+            </summary>
+            <remarks>
+            Предоставляет статический метод для создания PDF-документов с таблицей заявок.
+            Использует библиотеку PDFsharp для работы с PDF.
+            </remarks>
+        </member>
+        <member name="M:PatentApplicationManager.Utils.PdfReportGenerator.GenerateReport(System.Collections.Generic.List{PatentApplicationManager.Entities.PatentApplication},System.String)">
+            <summary>
+            Генерирует PDF-отчет с перечнем патентных заявок
+            </summary>
+            <param name="applications">Список патентных заявок для отображения в отчете</param>
+            <param name="filePath">Полный путь для сохранения PDF-файла</param>
+            <exception cref="T:System.ArgumentNullException">Возникает если applications или filePath равны null</exception>
+            <exception cref="T:System.IO.IOException">Возникает при проблемах записи файла</exception>
+            <example>
+            <code>
+            var applications = repository.GetAllPatentApplications();
+            PdfReportGenerator.GenerateReport(applications, "C:\\Reports\\patents.pdf");
+            </code>
+            </example>
+        </member>
+        <member name="T:PatentApplicationManager.Properties.Resources">
+            <summary>
+              Класс ресурсов со строгим типом для поиска локализованных строк и пр.
+            </summary>
+        </member>
+        <member name="P:PatentApplicationManager.Properties.Resources.ResourceManager">
+            <summary>
+              Возврат кэшированного экземпляра ResourceManager, используемого этим классом.
+            </summary>
+        </member>
+        <member name="P:PatentApplicationManager.Properties.Resources.Culture">
+            <summary>
+              Переопределяет свойство CurrentUICulture текущего потока для всех
+              подстановки ресурсов с помощью этого класса ресурсов со строгим типом.
+            </summary>
+        </member>
+    </members>
+</doc>

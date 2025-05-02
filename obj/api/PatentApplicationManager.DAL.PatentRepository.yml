@@ -1,0 +1,859 @@
+### YamlMime:ManagedReference
+items:
+- uid: PatentApplicationManager.DAL.PatentRepository
+  commentId: T:PatentApplicationManager.DAL.PatentRepository
+  id: PatentRepository
+  parent: PatentApplicationManager.DAL
+  children:
+  - PatentApplicationManager.DAL.PatentRepository.#ctor
+  - PatentApplicationManager.DAL.PatentRepository.#ctor(System.String)
+  - PatentApplicationManager.DAL.PatentRepository.AddPatentApplication(PatentApplicationManager.Entities.PatentApplication)
+  - PatentApplicationManager.DAL.PatentRepository.DeletePatentApplication(System.Int32)
+  - PatentApplicationManager.DAL.PatentRepository.FilterByStatus(System.String)
+  - PatentApplicationManager.DAL.PatentRepository.GetAllPatentApplications
+  - PatentApplicationManager.DAL.PatentRepository.GetPatentApplicationById(System.Int32)
+  - PatentApplicationManager.DAL.PatentRepository.SortByFilingDate(System.Boolean)
+  - PatentApplicationManager.DAL.PatentRepository.UpdatePatentApplication(PatentApplicationManager.Entities.PatentApplication)
+  langs:
+  - csharp
+  - vb
+  name: PatentRepository
+  nameWithType: PatentRepository
+  fullName: PatentApplicationManager.DAL.PatentRepository
+  type: Class
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/DAL/PatentRepository.cs
+    id: PatentRepository
+    path: DAL/PatentRepository.cs
+    startLine: 12
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.DAL
+  summary: "\nРепозиторий для работы с патентными заявками в базе данных SQLite\n"
+  example: []
+  syntax:
+    content: public class PatentRepository
+    content.vb: Public Class PatentRepository
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: PatentApplicationManager.DAL.PatentRepository.#ctor
+  commentId: M:PatentApplicationManager.DAL.PatentRepository.#ctor
+  id: '#ctor'
+  parent: PatentApplicationManager.DAL.PatentRepository
+  langs:
+  - csharp
+  - vb
+  name: PatentRepository()
+  nameWithType: PatentRepository.PatentRepository()
+  fullName: PatentApplicationManager.DAL.PatentRepository.PatentRepository()
+  type: Constructor
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/DAL/PatentRepository.cs
+    id: .ctor
+    path: DAL/PatentRepository.cs
+    startLine: 35
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.DAL
+  summary: "\nИнициализирует новый экземпляр класса <xref href=\"PatentApplicationManager.DAL.PatentRepository\" data-throw-if-not-resolved=\"false\"></xref>\n"
+  remarks: "\nПроверяет существование файла БД и создает его при необходимости\n"
+  example: []
+  syntax:
+    content: public PatentRepository()
+    content.vb: Public Sub New
+  overload: PatentApplicationManager.DAL.PatentRepository.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.DAL.PatentRepository.#ctor(System.String)
+  commentId: M:PatentApplicationManager.DAL.PatentRepository.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: PatentApplicationManager.DAL.PatentRepository
+  langs:
+  - csharp
+  - vb
+  name: PatentRepository(String)
+  nameWithType: PatentRepository.PatentRepository(String)
+  fullName: PatentApplicationManager.DAL.PatentRepository.PatentRepository(System.String)
+  type: Constructor
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/DAL/PatentRepository.cs
+    id: .ctor
+    path: DAL/PatentRepository.cs
+    startLine: 53
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.DAL
+  summary: "\nИнициализирует новый экземпляр класса <xref href=\"PatentApplicationManager.DAL.PatentRepository\" data-throw-if-not-resolved=\"false\"></xref> с указанием пути к БД\n"
+  remarks: "\nПроверяет существование файла БД и создает его при необходимости\n"
+  example: []
+  syntax:
+    content: public PatentRepository(string dbPath)
+    parameters:
+    - id: dbPath
+      type: System.String
+      description: Путь к файлу базы данных. Если null, используется значение по умолчанию.
+    content.vb: Public Sub New(dbPath As String)
+  overload: PatentApplicationManager.DAL.PatentRepository.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.DAL.PatentRepository.FilterByStatus(System.String)
+  commentId: M:PatentApplicationManager.DAL.PatentRepository.FilterByStatus(System.String)
+  id: FilterByStatus(System.String)
+  parent: PatentApplicationManager.DAL.PatentRepository
+  langs:
+  - csharp
+  - vb
+  name: FilterByStatus(String)
+  nameWithType: PatentRepository.FilterByStatus(String)
+  fullName: PatentApplicationManager.DAL.PatentRepository.FilterByStatus(System.String)
+  type: Method
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/DAL/PatentRepository.cs
+    id: FilterByStatus
+    path: DAL/PatentRepository.cs
+    startLine: 69
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.DAL
+  summary: "\nФильтрует заявки по указанному статусу\n"
+  example: []
+  syntax:
+    content: public List<PatentApplication> FilterByStatus(string status)
+    parameters:
+    - id: status
+      type: System.String
+      description: Статус для фильтрации
+    return:
+      type: System.Collections.Generic.List{PatentApplicationManager.Entities.PatentApplication}
+      description: Отфильтрованный список заявок
+    content.vb: Public Function FilterByStatus(status As String) As List(Of PatentApplication)
+  overload: PatentApplicationManager.DAL.PatentRepository.FilterByStatus*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.DAL.PatentRepository.SortByFilingDate(System.Boolean)
+  commentId: M:PatentApplicationManager.DAL.PatentRepository.SortByFilingDate(System.Boolean)
+  id: SortByFilingDate(System.Boolean)
+  parent: PatentApplicationManager.DAL.PatentRepository
+  langs:
+  - csharp
+  - vb
+  name: SortByFilingDate(Boolean)
+  nameWithType: PatentRepository.SortByFilingDate(Boolean)
+  fullName: PatentApplicationManager.DAL.PatentRepository.SortByFilingDate(System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/DAL/PatentRepository.cs
+    id: SortByFilingDate
+    path: DAL/PatentRepository.cs
+    startLine: 81
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.DAL
+  summary: "\nСортирует заявки по дате подачи\n"
+  example: []
+  syntax:
+    content: public List<PatentApplication> SortByFilingDate(bool ascending = true)
+    parameters:
+    - id: ascending
+      type: System.Boolean
+      description: True - по возрастанию, False - по убыванию
+    return:
+      type: System.Collections.Generic.List{PatentApplicationManager.Entities.PatentApplication}
+      description: Отсортированный список заявок
+    content.vb: Public Function SortByFilingDate(ascending As Boolean = True) As List(Of PatentApplication)
+  overload: PatentApplicationManager.DAL.PatentRepository.SortByFilingDate*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.DAL.PatentRepository.AddPatentApplication(PatentApplicationManager.Entities.PatentApplication)
+  commentId: M:PatentApplicationManager.DAL.PatentRepository.AddPatentApplication(PatentApplicationManager.Entities.PatentApplication)
+  id: AddPatentApplication(PatentApplicationManager.Entities.PatentApplication)
+  parent: PatentApplicationManager.DAL.PatentRepository
+  langs:
+  - csharp
+  - vb
+  name: AddPatentApplication(PatentApplication)
+  nameWithType: PatentRepository.AddPatentApplication(PatentApplication)
+  fullName: PatentApplicationManager.DAL.PatentRepository.AddPatentApplication(PatentApplicationManager.Entities.PatentApplication)
+  type: Method
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/DAL/PatentRepository.cs
+    id: AddPatentApplication
+    path: DAL/PatentRepository.cs
+    startLine: 134
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.DAL
+  summary: "\nДобавляет новую патентную заявку в базу данных\n"
+  example: []
+  syntax:
+    content: public int AddPatentApplication(PatentApplication application)
+    parameters:
+    - id: application
+      type: PatentApplicationManager.Entities.PatentApplication
+      description: Объект патентной заявки для добавления
+    return:
+      type: System.Int32
+      description: ID добавленной заявки или 0 при ошибке
+    content.vb: Public Function AddPatentApplication(application As PatentApplication) As Integer
+  overload: PatentApplicationManager.DAL.PatentRepository.AddPatentApplication*
+  exceptions:
+  - type: System.Data.SQLite.SQLiteException
+    commentId: T:System.Data.SQLite.SQLiteException
+    description: Возникает при ошибках выполнения SQL-запроса
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.DAL.PatentRepository.GetAllPatentApplications
+  commentId: M:PatentApplicationManager.DAL.PatentRepository.GetAllPatentApplications
+  id: GetAllPatentApplications
+  parent: PatentApplicationManager.DAL.PatentRepository
+  langs:
+  - csharp
+  - vb
+  name: GetAllPatentApplications()
+  nameWithType: PatentRepository.GetAllPatentApplications()
+  fullName: PatentApplicationManager.DAL.PatentRepository.GetAllPatentApplications()
+  type: Method
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/DAL/PatentRepository.cs
+    id: GetAllPatentApplications
+    path: DAL/PatentRepository.cs
+    startLine: 181
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.DAL
+  summary: "\nПолучает список всех патентных заявок из базы данных\n"
+  example: []
+  syntax:
+    content: public List<PatentApplication> GetAllPatentApplications()
+    return:
+      type: System.Collections.Generic.List{PatentApplicationManager.Entities.PatentApplication}
+      description: Список объектов <xref href="PatentApplicationManager.Entities.PatentApplication" data-throw-if-not-resolved="false"></xref> или пустой список при ошибке
+    content.vb: Public Function GetAllPatentApplications As List(Of PatentApplication)
+  overload: PatentApplicationManager.DAL.PatentRepository.GetAllPatentApplications*
+  exceptions:
+  - type: System.Data.SQLite.SQLiteException
+    commentId: T:System.Data.SQLite.SQLiteException
+    description: Возникает при ошибках выполнения SQL-запроса
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.DAL.PatentRepository.GetPatentApplicationById(System.Int32)
+  commentId: M:PatentApplicationManager.DAL.PatentRepository.GetPatentApplicationById(System.Int32)
+  id: GetPatentApplicationById(System.Int32)
+  parent: PatentApplicationManager.DAL.PatentRepository
+  langs:
+  - csharp
+  - vb
+  name: GetPatentApplicationById(Int32)
+  nameWithType: PatentRepository.GetPatentApplicationById(Int32)
+  fullName: PatentApplicationManager.DAL.PatentRepository.GetPatentApplicationById(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/DAL/PatentRepository.cs
+    id: GetPatentApplicationById
+    path: DAL/PatentRepository.cs
+    startLine: 229
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.DAL
+  summary: "\nПолучает патентную заявку по указанному ID\n"
+  example: []
+  syntax:
+    content: public PatentApplication GetPatentApplicationById(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: ID искомой заявки
+    return:
+      type: PatentApplicationManager.Entities.PatentApplication
+      description: Объект <xref href="PatentApplicationManager.Entities.PatentApplication" data-throw-if-not-resolved="false"></xref> или null, если заявка не найдена
+    content.vb: Public Function GetPatentApplicationById(id As Integer) As PatentApplication
+  overload: PatentApplicationManager.DAL.PatentRepository.GetPatentApplicationById*
+  exceptions:
+  - type: System.Data.SQLite.SQLiteException
+    commentId: T:System.Data.SQLite.SQLiteException
+    description: Возникает при ошибках выполнения SQL-запроса
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.DAL.PatentRepository.UpdatePatentApplication(PatentApplicationManager.Entities.PatentApplication)
+  commentId: M:PatentApplicationManager.DAL.PatentRepository.UpdatePatentApplication(PatentApplicationManager.Entities.PatentApplication)
+  id: UpdatePatentApplication(PatentApplicationManager.Entities.PatentApplication)
+  parent: PatentApplicationManager.DAL.PatentRepository
+  langs:
+  - csharp
+  - vb
+  name: UpdatePatentApplication(PatentApplication)
+  nameWithType: PatentRepository.UpdatePatentApplication(PatentApplication)
+  fullName: PatentApplicationManager.DAL.PatentRepository.UpdatePatentApplication(PatentApplicationManager.Entities.PatentApplication)
+  type: Method
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/DAL/PatentRepository.cs
+    id: UpdatePatentApplication
+    path: DAL/PatentRepository.cs
+    startLine: 282
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.DAL
+  summary: "\nОбновляет данные патентной заявки в базе данных\n"
+  example: []
+  syntax:
+    content: public void UpdatePatentApplication(PatentApplication application)
+    parameters:
+    - id: application
+      type: PatentApplicationManager.Entities.PatentApplication
+      description: Объект <xref href="PatentApplicationManager.Entities.PatentApplication" data-throw-if-not-resolved="false"></xref> с обновленными данными
+    content.vb: Public Sub UpdatePatentApplication(application As PatentApplication)
+  overload: PatentApplicationManager.DAL.PatentRepository.UpdatePatentApplication*
+  exceptions:
+  - type: System.Data.SQLite.SQLiteException
+    commentId: T:System.Data.SQLite.SQLiteException
+    description: Возникает при ошибках выполнения SQL-запроса
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Возникает если ID заявки не указан
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.DAL.PatentRepository.DeletePatentApplication(System.Int32)
+  commentId: M:PatentApplicationManager.DAL.PatentRepository.DeletePatentApplication(System.Int32)
+  id: DeletePatentApplication(System.Int32)
+  parent: PatentApplicationManager.DAL.PatentRepository
+  langs:
+  - csharp
+  - vb
+  name: DeletePatentApplication(Int32)
+  nameWithType: PatentRepository.DeletePatentApplication(Int32)
+  fullName: PatentApplicationManager.DAL.PatentRepository.DeletePatentApplication(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/DAL/PatentRepository.cs
+    id: DeletePatentApplication
+    path: DAL/PatentRepository.cs
+    startLine: 331
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.DAL
+  summary: "\nУдаляет патентную заявку по указанному ID\n"
+  example: []
+  syntax:
+    content: public void DeletePatentApplication(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: ID заявки для удаления
+    content.vb: Public Sub DeletePatentApplication(id As Integer)
+  overload: PatentApplicationManager.DAL.PatentRepository.DeletePatentApplication*
+  exceptions:
+  - type: System.Data.SQLite.SQLiteException
+    commentId: T:System.Data.SQLite.SQLiteException
+    description: Возникает при ошибках выполнения SQL-запроса
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: PatentApplicationManager.DAL
+  commentId: N:PatentApplicationManager.DAL
+  name: PatentApplicationManager.DAL
+  nameWithType: PatentApplicationManager.DAL
+  fullName: PatentApplicationManager.DAL
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PatentApplicationManager.DAL.PatentRepository
+  commentId: T:PatentApplicationManager.DAL.PatentRepository
+  name: PatentRepository
+  nameWithType: PatentRepository
+  fullName: PatentApplicationManager.DAL.PatentRepository
+- uid: PatentApplicationManager.DAL.PatentRepository.#ctor*
+  commentId: Overload:PatentApplicationManager.DAL.PatentRepository.#ctor
+  name: PatentRepository
+  nameWithType: PatentRepository.PatentRepository
+  fullName: PatentApplicationManager.DAL.PatentRepository.PatentRepository
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: PatentApplicationManager.DAL.PatentRepository.FilterByStatus*
+  commentId: Overload:PatentApplicationManager.DAL.PatentRepository.FilterByStatus
+  name: FilterByStatus
+  nameWithType: PatentRepository.FilterByStatus
+  fullName: PatentApplicationManager.DAL.PatentRepository.FilterByStatus
+- uid: System.Collections.Generic.List{PatentApplicationManager.Entities.PatentApplication}
+  commentId: T:System.Collections.Generic.List{PatentApplicationManager.Entities.PatentApplication}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<PatentApplication>
+  nameWithType: List<PatentApplication>
+  fullName: System.Collections.Generic.List<PatentApplicationManager.Entities.PatentApplication>
+  nameWithType.vb: List(Of PatentApplication)
+  fullName.vb: System.Collections.Generic.List(Of PatentApplicationManager.Entities.PatentApplication)
+  name.vb: List(Of PatentApplication)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: PatentApplicationManager.Entities.PatentApplication
+    name: PatentApplication
+    nameWithType: PatentApplication
+    fullName: PatentApplicationManager.Entities.PatentApplication
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: PatentApplicationManager.Entities.PatentApplication
+    name: PatentApplication
+    nameWithType: PatentApplication
+    fullName: PatentApplicationManager.Entities.PatentApplication
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: PatentApplicationManager.DAL.PatentRepository.SortByFilingDate*
+  commentId: Overload:PatentApplicationManager.DAL.PatentRepository.SortByFilingDate
+  name: SortByFilingDate
+  nameWithType: PatentRepository.SortByFilingDate
+  fullName: PatentApplicationManager.DAL.PatentRepository.SortByFilingDate
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Data.SQLite.SQLiteException
+  commentId: T:System.Data.SQLite.SQLiteException
+  isExternal: true
+- uid: PatentApplicationManager.DAL.PatentRepository.AddPatentApplication*
+  commentId: Overload:PatentApplicationManager.DAL.PatentRepository.AddPatentApplication
+  name: AddPatentApplication
+  nameWithType: PatentRepository.AddPatentApplication
+  fullName: PatentApplicationManager.DAL.PatentRepository.AddPatentApplication
+- uid: PatentApplicationManager.Entities.PatentApplication
+  commentId: T:PatentApplicationManager.Entities.PatentApplication
+  parent: PatentApplicationManager.Entities
+  name: PatentApplication
+  nameWithType: PatentApplication
+  fullName: PatentApplicationManager.Entities.PatentApplication
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: PatentApplicationManager.Entities
+  commentId: N:PatentApplicationManager.Entities
+  name: PatentApplicationManager.Entities
+  nameWithType: PatentApplicationManager.Entities
+  fullName: PatentApplicationManager.Entities
+- uid: PatentApplicationManager.DAL.PatentRepository.GetAllPatentApplications*
+  commentId: Overload:PatentApplicationManager.DAL.PatentRepository.GetAllPatentApplications
+  name: GetAllPatentApplications
+  nameWithType: PatentRepository.GetAllPatentApplications
+  fullName: PatentApplicationManager.DAL.PatentRepository.GetAllPatentApplications
+- uid: PatentApplicationManager.DAL.PatentRepository.GetPatentApplicationById*
+  commentId: Overload:PatentApplicationManager.DAL.PatentRepository.GetPatentApplicationById
+  name: GetPatentApplicationById
+  nameWithType: PatentRepository.GetPatentApplicationById
+  fullName: PatentApplicationManager.DAL.PatentRepository.GetPatentApplicationById
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+- uid: PatentApplicationManager.DAL.PatentRepository.UpdatePatentApplication*
+  commentId: Overload:PatentApplicationManager.DAL.PatentRepository.UpdatePatentApplication
+  name: UpdatePatentApplication
+  nameWithType: PatentRepository.UpdatePatentApplication
+  fullName: PatentApplicationManager.DAL.PatentRepository.UpdatePatentApplication
+- uid: PatentApplicationManager.DAL.PatentRepository.DeletePatentApplication*
+  commentId: Overload:PatentApplicationManager.DAL.PatentRepository.DeletePatentApplication
+  name: DeletePatentApplication
+  nameWithType: PatentRepository.DeletePatentApplication
+  fullName: PatentApplicationManager.DAL.PatentRepository.DeletePatentApplication

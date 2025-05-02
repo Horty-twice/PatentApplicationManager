@@ -1,0 +1,604 @@
+### YamlMime:ManagedReference
+items:
+- uid: PatentApplicationManager.DAL.DatabaseManager
+  commentId: T:PatentApplicationManager.DAL.DatabaseManager
+  id: DatabaseManager
+  parent: PatentApplicationManager.DAL
+  children:
+  - PatentApplicationManager.DAL.DatabaseManager.#ctor(System.String)
+  - PatentApplicationManager.DAL.DatabaseManager.BackupDatabase(System.String)
+  - PatentApplicationManager.DAL.DatabaseManager.CreateDatabase
+  - PatentApplicationManager.DAL.DatabaseManager.DatabaseExists
+  - PatentApplicationManager.DAL.DatabaseManager.DeleteDatabase
+  - PatentApplicationManager.DAL.DatabaseManager.RestoreDatabase(System.String)
+  langs:
+  - csharp
+  - vb
+  name: DatabaseManager
+  nameWithType: DatabaseManager
+  fullName: PatentApplicationManager.DAL.DatabaseManager
+  type: Class
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/DAL/DatabaseManager.cs
+    id: DatabaseManager
+    path: DAL/DatabaseManager.cs
+    startLine: 9
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.DAL
+  summary: "\nПредоставляет методы для управления файлом базы данных\n"
+  example: []
+  syntax:
+    content: public class DatabaseManager
+    content.vb: Public Class DatabaseManager
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: PatentApplicationManager.DAL.DatabaseManager.#ctor(System.String)
+  commentId: M:PatentApplicationManager.DAL.DatabaseManager.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: PatentApplicationManager.DAL.DatabaseManager
+  langs:
+  - csharp
+  - vb
+  name: DatabaseManager(String)
+  nameWithType: DatabaseManager.DatabaseManager(String)
+  fullName: PatentApplicationManager.DAL.DatabaseManager.DatabaseManager(System.String)
+  type: Constructor
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/DAL/DatabaseManager.cs
+    id: .ctor
+    path: DAL/DatabaseManager.cs
+    startLine: 17
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.DAL
+  summary: "\nИнициализирует новый экземпляр менеджера БД\n"
+  example: []
+  syntax:
+    content: public DatabaseManager(string dbPath = "patents.db")
+    parameters:
+    - id: dbPath
+      type: System.String
+      description: Путь к файлу базы данных (по умолчанию patents.db)
+    content.vb: Public Sub New(dbPath As String = "patents.db")
+  overload: PatentApplicationManager.DAL.DatabaseManager.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.DAL.DatabaseManager.DatabaseExists
+  commentId: M:PatentApplicationManager.DAL.DatabaseManager.DatabaseExists
+  id: DatabaseExists
+  parent: PatentApplicationManager.DAL.DatabaseManager
+  langs:
+  - csharp
+  - vb
+  name: DatabaseExists()
+  nameWithType: DatabaseManager.DatabaseExists()
+  fullName: PatentApplicationManager.DAL.DatabaseManager.DatabaseExists()
+  type: Method
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/DAL/DatabaseManager.cs
+    id: DatabaseExists
+    path: DAL/DatabaseManager.cs
+    startLine: 25
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.DAL
+  summary: "\nПроверяет существование файла базы данных\n"
+  example: []
+  syntax:
+    content: public bool DatabaseExists()
+    return:
+      type: System.Boolean
+    content.vb: Public Function DatabaseExists As Boolean
+  overload: PatentApplicationManager.DAL.DatabaseManager.DatabaseExists*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.DAL.DatabaseManager.CreateDatabase
+  commentId: M:PatentApplicationManager.DAL.DatabaseManager.CreateDatabase
+  id: CreateDatabase
+  parent: PatentApplicationManager.DAL.DatabaseManager
+  langs:
+  - csharp
+  - vb
+  name: CreateDatabase()
+  nameWithType: DatabaseManager.CreateDatabase()
+  fullName: PatentApplicationManager.DAL.DatabaseManager.CreateDatabase()
+  type: Method
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/DAL/DatabaseManager.cs
+    id: CreateDatabase
+    path: DAL/DatabaseManager.cs
+    startLine: 34
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.DAL
+  summary: "\nСоздает новую базу данных с таблицей PatentApplications\n"
+  example: []
+  syntax:
+    content: public void CreateDatabase()
+    content.vb: Public Sub CreateDatabase
+  overload: PatentApplicationManager.DAL.DatabaseManager.CreateDatabase*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: Возникает при ошибках создания БД
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.DAL.DatabaseManager.DeleteDatabase
+  commentId: M:PatentApplicationManager.DAL.DatabaseManager.DeleteDatabase
+  id: DeleteDatabase
+  parent: PatentApplicationManager.DAL.DatabaseManager
+  langs:
+  - csharp
+  - vb
+  name: DeleteDatabase()
+  nameWithType: DatabaseManager.DeleteDatabase()
+  fullName: PatentApplicationManager.DAL.DatabaseManager.DeleteDatabase()
+  type: Method
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/DAL/DatabaseManager.cs
+    id: DeleteDatabase
+    path: DAL/DatabaseManager.cs
+    startLine: 70
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.DAL
+  summary: "\nУдаляет файл базы данных\n"
+  example: []
+  syntax:
+    content: public void DeleteDatabase()
+    content.vb: Public Sub DeleteDatabase
+  overload: PatentApplicationManager.DAL.DatabaseManager.DeleteDatabase*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.DAL.DatabaseManager.BackupDatabase(System.String)
+  commentId: M:PatentApplicationManager.DAL.DatabaseManager.BackupDatabase(System.String)
+  id: BackupDatabase(System.String)
+  parent: PatentApplicationManager.DAL.DatabaseManager
+  langs:
+  - csharp
+  - vb
+  name: BackupDatabase(String)
+  nameWithType: DatabaseManager.BackupDatabase(String)
+  fullName: PatentApplicationManager.DAL.DatabaseManager.BackupDatabase(System.String)
+  type: Method
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/DAL/DatabaseManager.cs
+    id: BackupDatabase
+    path: DAL/DatabaseManager.cs
+    startLine: 81
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.DAL
+  summary: "\nСоздает резервную копию базы данных\n"
+  example: []
+  syntax:
+    content: public void BackupDatabase(string backupPath)
+    parameters:
+    - id: backupPath
+      type: System.String
+      description: Путь для сохранения резервной копии
+    content.vb: Public Sub BackupDatabase(backupPath As String)
+  overload: PatentApplicationManager.DAL.DatabaseManager.BackupDatabase*
+  exceptions:
+  - type: System.IO.FileNotFoundException
+    commentId: T:System.IO.FileNotFoundException
+    description: Возникает если исходная БД не найдена
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.DAL.DatabaseManager.RestoreDatabase(System.String)
+  commentId: M:PatentApplicationManager.DAL.DatabaseManager.RestoreDatabase(System.String)
+  id: RestoreDatabase(System.String)
+  parent: PatentApplicationManager.DAL.DatabaseManager
+  langs:
+  - csharp
+  - vb
+  name: RestoreDatabase(String)
+  nameWithType: DatabaseManager.RestoreDatabase(String)
+  fullName: PatentApplicationManager.DAL.DatabaseManager.RestoreDatabase(System.String)
+  type: Method
+  source:
+    remote:
+      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/DAL/DatabaseManager.cs
+    id: RestoreDatabase
+    path: DAL/DatabaseManager.cs
+    startLine: 94
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.DAL
+  summary: "\nВосстанавливает базу данных из резервной копии\n"
+  example: []
+  syntax:
+    content: public void RestoreDatabase(string backupPath)
+    parameters:
+    - id: backupPath
+      type: System.String
+      description: Путь к файлу резервной копии
+    content.vb: Public Sub RestoreDatabase(backupPath As String)
+  overload: PatentApplicationManager.DAL.DatabaseManager.RestoreDatabase*
+  exceptions:
+  - type: System.IO.FileNotFoundException
+    commentId: T:System.IO.FileNotFoundException
+    description: Возникает если файл копии не найден
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: PatentApplicationManager.DAL
+  commentId: N:PatentApplicationManager.DAL
+  name: PatentApplicationManager.DAL
+  nameWithType: PatentApplicationManager.DAL
+  fullName: PatentApplicationManager.DAL
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: PatentApplicationManager.DAL.DatabaseManager.#ctor*
+  commentId: Overload:PatentApplicationManager.DAL.DatabaseManager.#ctor
+  name: DatabaseManager
+  nameWithType: DatabaseManager.DatabaseManager
+  fullName: PatentApplicationManager.DAL.DatabaseManager.DatabaseManager
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: PatentApplicationManager.DAL.DatabaseManager.DatabaseExists*
+  commentId: Overload:PatentApplicationManager.DAL.DatabaseManager.DatabaseExists
+  name: DatabaseExists
+  nameWithType: DatabaseManager.DatabaseExists
+  fullName: PatentApplicationManager.DAL.DatabaseManager.DatabaseExists
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+- uid: PatentApplicationManager.DAL.DatabaseManager.CreateDatabase*
+  commentId: Overload:PatentApplicationManager.DAL.DatabaseManager.CreateDatabase
+  name: CreateDatabase
+  nameWithType: DatabaseManager.CreateDatabase
+  fullName: PatentApplicationManager.DAL.DatabaseManager.CreateDatabase
+- uid: PatentApplicationManager.DAL.DatabaseManager.DeleteDatabase*
+  commentId: Overload:PatentApplicationManager.DAL.DatabaseManager.DeleteDatabase
+  name: DeleteDatabase
+  nameWithType: DatabaseManager.DeleteDatabase
+  fullName: PatentApplicationManager.DAL.DatabaseManager.DeleteDatabase
+- uid: System.IO.FileNotFoundException
+  commentId: T:System.IO.FileNotFoundException
+  isExternal: true
+- uid: PatentApplicationManager.DAL.DatabaseManager.BackupDatabase*
+  commentId: Overload:PatentApplicationManager.DAL.DatabaseManager.BackupDatabase
+  name: BackupDatabase
+  nameWithType: DatabaseManager.BackupDatabase
+  fullName: PatentApplicationManager.DAL.DatabaseManager.BackupDatabase
+- uid: PatentApplicationManager.DAL.DatabaseManager.RestoreDatabase*
+  commentId: Overload:PatentApplicationManager.DAL.DatabaseManager.RestoreDatabase
+  name: RestoreDatabase
+  nameWithType: DatabaseManager.RestoreDatabase
+  fullName: PatentApplicationManager.DAL.DatabaseManager.RestoreDatabase

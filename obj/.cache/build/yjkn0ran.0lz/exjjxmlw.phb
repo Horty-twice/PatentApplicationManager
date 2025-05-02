@@ -1,0 +1,1 @@
+{"index.md":[{"File":"index.md","Line":"17","LogLevel":"warning","Message":"Invalid file link:(~/articles/guide.md).","Phase":"BuildCommand.BuildCore.Build Document.LinkPhaseHandlerWithIncremental.ConceptualDocumentProcessor.Save","Code":"InvalidFileLink"}]}
