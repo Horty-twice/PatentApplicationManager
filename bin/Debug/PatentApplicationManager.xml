@@ -45,6 +45,11 @@
             <param name="backupPath">Путь к файлу резервной копии</param>
             <exception cref="T:System.IO.FileNotFoundException">Возникает если файл копии не найден</exception>
         </member>
+        <member name="M:PatentApplicationManager.DAL.DatabaseManager.GetDatabasePath">
+            <summary>
+            Метод для получения пути к БД
+            </summary>
+        </member>
         <member name="T:PatentApplicationManager.DAL.PatentRepository">
             <summary>
             Репозиторий для работы с патентными заявками в базе данных SQLite

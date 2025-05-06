@@ -36,26 +36,49 @@ namespace PatentApplicationManager.DAL
         {
             try
             {
-                if (File.Exists(_dbPath))
-                    File.Delete(_dbPath);
+                // Закрываем все возможные соединения перед удалением
+                SQLiteConnection.ClearAllPools();
 
-                using (var connection = new SQLiteConnection($"Data Source={_dbPath}"))
+                if (File.Exists(_dbPath))
+                {
+                    // Удаляем файл с повторными попытками
+                    int attempts = 0;
+                    while (attempts < 3)
+                    {
+                        try
+                        {
+                            File.Delete(_dbPath);
+                            break;
+                        }
+                        catch (IOException)
+                        {
+                            attempts++;
+                            if (attempts == 3) throw;
+                            System.Threading.Thread.Sleep(100);
+                        }
+                    }
+                }
+
+                // Создаем новую базу данных
+                SQLiteConnection.CreateFile(_dbPath);
+
+                using (var connection = new SQLiteConnection($"Data Source={_dbPath};Version=3;"))
                 {
                     connection.Open();
                     string createTableQuery = @"
-                        CREATE TABLE PatentApplications (
-                            Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                            ApplicationNumber TEXT,
-                            FilingDate DATETIME,
-                            InventionTitle TEXT,
-                            ApplicantName TEXT,
-                            PatentAttorneyName TEXT,
-                            Status TEXT,
-                            DecisionDate DATETIME,
-                            PatentNumber TEXT,
-                            ExpirationDate DATETIME,
-                            Notes TEXT
-                        )";
+                CREATE TABLE PatentApplications (
+                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    ApplicationNumber TEXT,
+                    FilingDate DATETIME,
+                    InventionTitle TEXT,
+                    ApplicantName TEXT,
+                    PatentAttorneyName TEXT,
+                    Status TEXT,
+                    DecisionDate DATETIME,
+                    PatentNumber TEXT,
+                    ExpirationDate DATETIME,
+                    Notes TEXT
+                )";
                     new SQLiteCommand(createTableQuery, connection).ExecuteNonQuery();
                 }
             }
@@ -101,6 +124,14 @@ namespace PatentApplicationManager.DAL
                 File.Delete(_dbPath);
 
             File.Copy(backupPath, _dbPath);
+        }
+
+        /// <summary>
+        /// Метод для получения пути к БД
+        /// </summary>
+        public string GetDatabasePath()
+        {
+            return _dbPath;
         }
     }
 }

@@ -57,10 +57,10 @@
       "output": {
         ".html": {
           "relative_path": "api/PatentApplicationManager.DAL.DatabaseManager.html",
-          "hash": "dMFWL7qVz+bQYJUagHAsnMlsyqU5ZOa7hWaSyolKppA="
+          "hash": "WVyn5NlGhpAp7lLUNnFg/UZC6BCUVwjrgLDlXUbdVzc="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PatentApplicationManager.DAL.PatentRepository.html",
-          "hash": "YMNQy0KMCGi4povQT9vSkZ/hJl9LyQSGeoiy1rHAygw="
+          "hash": "2jrP6owmkBpFJAMof6YkQXg+yMIPt4zu9Qb/Nb568y4="
         }
       },
       "is_incremental": true,
@@ -84,7 +84,7 @@
           "hash": "aQgXtHo5griF8sywhsiMU1+1148XEe+ShB4WcX/bJUo="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PatentApplicationManager.Entities.PatentApplication.html",
-          "hash": "zQzisv+7hrT4A6qf3ob1Hy5drNdpHsFtud7HWQuA/TI="
+          "hash": "mIJ2Ns9PMRkKwye0ERZsjaMLR3LZzQwnxsnPns649IY="
         }
       },
       "is_incremental": true,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PatentApplicationManager.MainForm.html",
-          "hash": "wlvU21CFrRMT57ER+mZtG9zJgKZSw0+TYgxBTegcaJg="
+          "hash": "cLA6DGX4kxKaYJd9TtbawD+3Rm/rXSzeA6EgHVH8tnA="
         }
       },
       "is_incremental": true,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PatentApplicationManager.UI.AddApplicationForm.html",
-          "hash": "tPcFl/lCnjcmvXLtaZYwpRmKLcQJQSVt5I8XE+7ybv8="
+          "hash": "z9y/WpvuNZsTIVa44/BK7S5/YubjRTagrvCDDLt/4Bo="
         }
       },
       "is_incremental": true,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PatentApplicationManager.UI.EditApplicationForm.html",
-          "hash": "V5qnYIMLOCOVCShU7/EJQi96KN3p5R0LroZMtURG010="
+          "hash": "x0IFr95GMpFtwCICvbBOve2gpX8GAP40C0viGtghUaI="
         }
       },
       "is_incremental": true,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PatentApplicationManager.Utils.PdfReportGenerator.html",
-          "hash": "MOElnGCnu6QUmIiVeoI52Jq9ZKzyIFl+2IzsJk/4CZg="
+          "hash": "lAF6lMks3AoyVOe+hWI7I5eQaCgu3kcwuSduSWrwzDc="
         }
       },
       "is_incremental": true,
@@ -239,7 +239,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 12,
-          "skipped_file_count": 12
+          "skipped_file_count": 11
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

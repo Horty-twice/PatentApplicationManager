@@ -84,6 +84,19 @@ references:
   isSpec: "True"
   fullName: PatentApplicationManager.DAL.DatabaseManager.DeleteDatabase
   nameWithType: DatabaseManager.DeleteDatabase
+- uid: PatentApplicationManager.DAL.DatabaseManager.GetDatabasePath
+  name: GetDatabasePath()
+  href: api/PatentApplicationManager.DAL.DatabaseManager.html#PatentApplicationManager_DAL_DatabaseManager_GetDatabasePath
+  commentId: M:PatentApplicationManager.DAL.DatabaseManager.GetDatabasePath
+  fullName: PatentApplicationManager.DAL.DatabaseManager.GetDatabasePath()
+  nameWithType: DatabaseManager.GetDatabasePath()
+- uid: PatentApplicationManager.DAL.DatabaseManager.GetDatabasePath*
+  name: GetDatabasePath
+  href: api/PatentApplicationManager.DAL.DatabaseManager.html#PatentApplicationManager_DAL_DatabaseManager_GetDatabasePath_
+  commentId: Overload:PatentApplicationManager.DAL.DatabaseManager.GetDatabasePath
+  isSpec: "True"
+  fullName: PatentApplicationManager.DAL.DatabaseManager.GetDatabasePath
+  nameWithType: DatabaseManager.GetDatabasePath
 - uid: PatentApplicationManager.DAL.DatabaseManager.RestoreDatabase(System.String)
   name: RestoreDatabase(String)
   href: api/PatentApplicationManager.DAL.DatabaseManager.html#PatentApplicationManager_DAL_DatabaseManager_RestoreDatabase_System_String_

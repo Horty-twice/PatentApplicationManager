@@ -16,7 +16,9 @@ items:
   type: Class
   source:
     remote:
-      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/UI/EditApplicationForm.Designer.cs
+      path: UI/EditApplicationForm.Designer.cs
+      branch: main
+      repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: EditApplicationForm
     path: UI/EditApplicationForm.Designer.cs
     startLine: 2
@@ -581,7 +583,9 @@ items:
   type: Constructor
   source:
     remote:
-      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/UI/EditApplicationForm.cs
+      path: UI/EditApplicationForm.cs
+      branch: main
+      repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: .ctor
     path: UI/EditApplicationForm.cs
     startLine: 34
@@ -619,7 +623,9 @@ items:
   type: Method
   source:
     remote:
-      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/UI/EditApplicationForm.Designer.cs
+      path: UI/EditApplicationForm.Designer.cs
+      branch: main
+      repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: Dispose
     path: UI/EditApplicationForm.Designer.cs
     startLine: 13

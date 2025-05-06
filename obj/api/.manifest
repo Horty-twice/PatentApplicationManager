@@ -7,6 +7,7 @@
   "PatentApplicationManager.DAL.DatabaseManager.CreateDatabase": "PatentApplicationManager.DAL.DatabaseManager.yml",
   "PatentApplicationManager.DAL.DatabaseManager.DatabaseExists": "PatentApplicationManager.DAL.DatabaseManager.yml",
   "PatentApplicationManager.DAL.DatabaseManager.DeleteDatabase": "PatentApplicationManager.DAL.DatabaseManager.yml",
+  "PatentApplicationManager.DAL.DatabaseManager.GetDatabasePath": "PatentApplicationManager.DAL.DatabaseManager.yml",
   "PatentApplicationManager.DAL.DatabaseManager.RestoreDatabase(System.String)": "PatentApplicationManager.DAL.DatabaseManager.yml",
   "PatentApplicationManager.DAL.PatentRepository": "PatentApplicationManager.DAL.PatentRepository.yml",
   "PatentApplicationManager.DAL.PatentRepository.#ctor": "PatentApplicationManager.DAL.PatentRepository.yml",

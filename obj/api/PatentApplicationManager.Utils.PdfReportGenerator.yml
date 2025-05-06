@@ -15,7 +15,9 @@ items:
   type: Class
   source:
     remote:
-      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/Utils/PdfReportGenerator.cs
+      path: Utils/PdfReportGenerator.cs
+      branch: main
+      repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: PdfReportGenerator
     path: Utils/PdfReportGenerator.cs
     startLine: 15
@@ -58,7 +60,9 @@ items:
   type: Method
   source:
     remote:
-      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/Utils/PdfReportGenerator.cs
+      path: Utils/PdfReportGenerator.cs
+      branch: main
+      repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: GenerateReport
     path: Utils/PdfReportGenerator.cs
     startLine: 30

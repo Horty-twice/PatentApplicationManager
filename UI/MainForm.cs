@@ -509,18 +509,38 @@ namespace PatentApplicationManager
             {
                 var dbManager = new DatabaseManager();
 
-                if (dbManager.DatabaseExists()) // Теперь работает!
+                if (dbManager.DatabaseExists())
                 {
                     string backupDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Backups");
                     Directory.CreateDirectory(backupDir);
                     string backupPath = Path.Combine(backupDir, $"patents_backup_{DateTime.Now:yyyyMMdd_HHmmss}.db");
 
-                    dbManager.BackupDatabase(backupPath);
-                    MessageBox.Show($"Резервная копия сохранена как:\n{backupPath}", "Бэкап создан");
+                    try
+                    {
+                        dbManager.BackupDatabase(backupPath);
+                        MessageBox.Show($"Резервная копия сохранена как:\n{backupPath}", "Бэкап создан");
+                    }
+                    catch (Exception backupEx)
+                    {
+                        MessageBox.Show($"Не удалось создать резервную копию: {backupEx.Message}", "Ошибка");
+                        return;
+                    }
                 }
 
+                // Закрываем все соединения с текущей БД
+                _repository = null;
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+
+                // Создаем новую БД
                 dbManager.CreateDatabase();
+
+                // Пересоздаем репозиторий
+                _repository = new PatentRepository();
+
+                // Обновляем данные
                 LoadPatentApplications();
+
                 MessageBox.Show("Новая БД успешно создана", "Успех");
             }
             catch (Exception ex)
@@ -717,7 +737,6 @@ namespace PatentApplicationManager
         {
             try
             {
-                // 1. Выбор файла для импорта
                 using (var openFileDialog = new OpenFileDialog())
                 {
                     openFileDialog.Filter = "SQLite Database (*.db)|*.db|All files (*.*)|*.*";
@@ -728,53 +747,27 @@ namespace PatentApplicationManager
 
                     string importFilePath = openFileDialog.FileName;
 
-                    // 2. Проверка существования файла
+                    // Проверка существования файла
                     if (!File.Exists(importFilePath))
                     {
                         ShowError("Выбранный файл не существует!");
                         return;
                     }
 
-                    // 3. Проверка размера файла (минимум 1 КБ)
-                    FileInfo fileInfo = new FileInfo(importFilePath);
-                    if (fileInfo.Length < 1024)
-                    {
-                        ShowError("Файл слишком мал для базы данных!");
-                        return;
-                    }
-
-                    // 4. Проверка, что файл является валидной SQLite БД
+                    // Проверка валидности SQLite файла
                     try
                     {
                         using (var testConnection = new SQLiteConnection($"Data Source={importFilePath};Version=3;FailIfMissing=True;"))
                         {
                             testConnection.Open();
-
                             // Проверка наличия нужной таблицы
                             var checkTableCmd = new SQLiteCommand(
-                                "SELECT count(*) FROM sqlite_master " +
-                                "WHERE type='table' AND name='PatentApplications'",
+                                "SELECT count(*) FROM sqlite_master WHERE type='table' AND name='PatentApplications'",
                                 testConnection);
-
-                            object result = checkTableCmd.ExecuteScalar();
-                            if (result == null || Convert.ToInt32(result) == 0)
+                            if (Convert.ToInt32(checkTableCmd.ExecuteScalar()) == 0)
                             {
                                 ShowError("В выбранной базе отсутствует таблица PatentApplications!");
                                 return;
-                            }
-
-                            // Дополнительная проверка структуры таблицы
-                            var checkColumnsCmd = new SQLiteCommand(
-                                "PRAGMA table_info('PatentApplications')",
-                                testConnection);
-
-                            using (var reader = checkColumnsCmd.ExecuteReader())
-                            {
-                                if (!reader.HasRows)
-                                {
-                                    ShowError("Не удалось проверить структуру таблицы!");
-                                    return;
-                                }
                             }
                         }
                     }
@@ -784,7 +777,7 @@ namespace PatentApplicationManager
                         return;
                     }
 
-                    // 5. Подтверждение операции
+                    // Подтверждение операции
                     if (MessageBox.Show(
                         "ВНИМАНИЕ! Текущая база данных будет заменена.\nПродолжить?",
                         "Подтверждение импорта",
@@ -798,7 +791,7 @@ namespace PatentApplicationManager
                     string backupDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Backups");
                     Directory.CreateDirectory(backupDir);
 
-                    // 6. Создание резервной копии текущей БД (если существует)
+                    // Создание резервной копии текущей БД (если существует)
                     string backupPath = string.Empty;
                     if (dbManager.DatabaseExists())
                     {
@@ -815,16 +808,31 @@ namespace PatentApplicationManager
                         }
                     }
 
-                    // 7. Восстановление из выбранного файла
+                    // Закрываем все соединения с текущей БД
+                    _repository = null;
+                    GC.Collect();
+                    GC.WaitForPendingFinalizers();
+                    SQLiteConnection.ClearAllPools();
+
+                    // Восстановление из выбранного файла
                     try
                     {
-                        dbManager.RestoreDatabase(importFilePath);
-                        LogOperation($"Успешный импорт БД из: {importFilePath}");
+                        // Удаляем текущую БД если существует
+                        if (File.Exists(dbManager.GetDatabasePath()))
+                        {
+                            File.Delete(dbManager.GetDatabasePath());
+                        }
 
-                        // 8. Обновление интерфейса
+                        // Копируем файл импорта
+                        File.Copy(importFilePath, dbManager.GetDatabasePath());
+
+                        // Пересоздаем репозиторий
+                        _repository = new PatentRepository();
+
+                        // Обновляем интерфейс
                         LoadPatentApplications();
 
-                        // 9. Уведомление пользователя
+                        // Уведомление пользователя
                         string message = "База данных успешно восстановлена из резервной копии.";
                         if (!string.IsNullOrEmpty(backupPath))
                         {
@@ -843,7 +851,12 @@ namespace PatentApplicationManager
                         {
                             try
                             {
-                                dbManager.RestoreDatabase(backupPath);
+                                if (File.Exists(dbManager.GetDatabasePath()))
+                                {
+                                    File.Delete(dbManager.GetDatabasePath());
+                                }
+                                File.Copy(backupPath, dbManager.GetDatabasePath());
+                                _repository = new PatentRepository();
                                 LogOperation($"Восстановление из резервной копии после ошибки импорта: {backupPath}");
                             }
                             catch { /* ignore */ }

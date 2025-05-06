@@ -16,7 +16,9 @@ items:
   type: Class
   source:
     remote:
-      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/UI/AddApplicationForm.Designer.cs
+      path: UI/AddApplicationForm.Designer.cs
+      branch: main
+      repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: AddApplicationForm
     path: UI/AddApplicationForm.Designer.cs
     startLine: 2
@@ -581,7 +583,9 @@ items:
   type: Constructor
   source:
     remote:
-      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/UI/AddApplicationForm.cs
+      path: UI/AddApplicationForm.cs
+      branch: main
+      repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: .ctor
     path: UI/AddApplicationForm.cs
     startLine: 26
@@ -611,7 +615,9 @@ items:
   type: Method
   source:
     remote:
-      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/UI/AddApplicationForm.Designer.cs
+      path: UI/AddApplicationForm.Designer.cs
+      branch: main
+      repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: Dispose
     path: UI/AddApplicationForm.Designer.cs
     startLine: 13

@@ -10,6 +10,7 @@ items:
   - PatentApplicationManager.DAL.DatabaseManager.CreateDatabase
   - PatentApplicationManager.DAL.DatabaseManager.DatabaseExists
   - PatentApplicationManager.DAL.DatabaseManager.DeleteDatabase
+  - PatentApplicationManager.DAL.DatabaseManager.GetDatabasePath
   - PatentApplicationManager.DAL.DatabaseManager.RestoreDatabase(System.String)
   langs:
   - csharp
@@ -20,7 +21,9 @@ items:
   type: Class
   source:
     remote:
-      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/DAL/DatabaseManager.cs
+      path: DAL/DatabaseManager.cs
+      branch: main
+      repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: DatabaseManager
     path: DAL/DatabaseManager.cs
     startLine: 9
@@ -61,7 +64,9 @@ items:
   type: Constructor
   source:
     remote:
-      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/DAL/DatabaseManager.cs
+      path: DAL/DatabaseManager.cs
+      branch: main
+      repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: .ctor
     path: DAL/DatabaseManager.cs
     startLine: 17
@@ -95,7 +100,9 @@ items:
   type: Method
   source:
     remote:
-      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/DAL/DatabaseManager.cs
+      path: DAL/DatabaseManager.cs
+      branch: main
+      repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: DatabaseExists
     path: DAL/DatabaseManager.cs
     startLine: 25
@@ -127,7 +134,9 @@ items:
   type: Method
   source:
     remote:
-      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/DAL/DatabaseManager.cs
+      path: DAL/DatabaseManager.cs
+      branch: main
+      repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: CreateDatabase
     path: DAL/DatabaseManager.cs
     startLine: 34
@@ -161,10 +170,12 @@ items:
   type: Method
   source:
     remote:
-      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/DAL/DatabaseManager.cs
+      path: DAL/DatabaseManager.cs
+      branch: main
+      repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: DeleteDatabase
     path: DAL/DatabaseManager.cs
-    startLine: 70
+    startLine: 93
   assemblies:
   - PatentApplicationManager
   namespace: PatentApplicationManager.DAL
@@ -191,10 +202,12 @@ items:
   type: Method
   source:
     remote:
-      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/DAL/DatabaseManager.cs
+      path: DAL/DatabaseManager.cs
+      branch: main
+      repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: BackupDatabase
     path: DAL/DatabaseManager.cs
-    startLine: 81
+    startLine: 104
   assemblies:
   - PatentApplicationManager
   namespace: PatentApplicationManager.DAL
@@ -229,10 +242,12 @@ items:
   type: Method
   source:
     remote:
-      path: D:/my_projects/PatentApplicationManager/PatentApplicationManager/DAL/DatabaseManager.cs
+      path: DAL/DatabaseManager.cs
+      branch: main
+      repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: RestoreDatabase
     path: DAL/DatabaseManager.cs
-    startLine: 94
+    startLine: 117
   assemblies:
   - PatentApplicationManager
   namespace: PatentApplicationManager.DAL
@@ -250,6 +265,40 @@ items:
   - type: System.IO.FileNotFoundException
     commentId: T:System.IO.FileNotFoundException
     description: Возникает если файл копии не найден
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.DAL.DatabaseManager.GetDatabasePath
+  commentId: M:PatentApplicationManager.DAL.DatabaseManager.GetDatabasePath
+  id: GetDatabasePath
+  parent: PatentApplicationManager.DAL.DatabaseManager
+  langs:
+  - csharp
+  - vb
+  name: GetDatabasePath()
+  nameWithType: DatabaseManager.GetDatabasePath()
+  fullName: PatentApplicationManager.DAL.DatabaseManager.GetDatabasePath()
+  type: Method
+  source:
+    remote:
+      path: DAL/DatabaseManager.cs
+      branch: main
+      repo: https://github.com/Horty-twice/PatentApplicationManager.git
+    id: GetDatabasePath
+    path: DAL/DatabaseManager.cs
+    startLine: 131
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.DAL
+  summary: "\nМетод для получения пути к БД\n"
+  example: []
+  syntax:
+    content: public string GetDatabasePath()
+    return:
+      type: System.String
+    content.vb: Public Function GetDatabasePath As String
+  overload: PatentApplicationManager.DAL.DatabaseManager.GetDatabasePath*
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -602,3 +651,8 @@ references:
   name: RestoreDatabase
   nameWithType: DatabaseManager.RestoreDatabase
   fullName: PatentApplicationManager.DAL.DatabaseManager.RestoreDatabase
+- uid: PatentApplicationManager.DAL.DatabaseManager.GetDatabasePath*
+  commentId: Overload:PatentApplicationManager.DAL.DatabaseManager.GetDatabasePath
+  name: GetDatabasePath
+  nameWithType: DatabaseManager.GetDatabasePath
+  fullName: PatentApplicationManager.DAL.DatabaseManager.GetDatabasePath
