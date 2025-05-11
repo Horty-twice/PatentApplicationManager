@@ -11,6 +11,8 @@ items:
   - PatentApplicationManager.DAL.PatentRepository.DeletePatentApplication(System.Int32)
   - PatentApplicationManager.DAL.PatentRepository.FilterByStatus(System.String)
   - PatentApplicationManager.DAL.PatentRepository.GetAllPatentApplications
+  - PatentApplicationManager.DAL.PatentRepository.GetNextApplicationNumber
+  - PatentApplicationManager.DAL.PatentRepository.GetNextPatentNumber
   - PatentApplicationManager.DAL.PatentRepository.GetPatentApplicationById(System.Int32)
   - PatentApplicationManager.DAL.PatentRepository.SortByFilingDate(System.Boolean)
   - PatentApplicationManager.DAL.PatentRepository.UpdatePatentApplication(PatentApplicationManager.Entities.PatentApplication)
@@ -405,6 +407,74 @@ items:
   - type: System.Data.SQLite.SQLiteException
     commentId: T:System.Data.SQLite.SQLiteException
     description: Возникает при ошибках выполнения SQL-запроса
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.DAL.PatentRepository.GetNextApplicationNumber
+  commentId: M:PatentApplicationManager.DAL.PatentRepository.GetNextApplicationNumber
+  id: GetNextApplicationNumber
+  parent: PatentApplicationManager.DAL.PatentRepository
+  langs:
+  - csharp
+  - vb
+  name: GetNextApplicationNumber()
+  nameWithType: PatentRepository.GetNextApplicationNumber()
+  fullName: PatentApplicationManager.DAL.PatentRepository.GetNextApplicationNumber()
+  type: Method
+  source:
+    remote:
+      path: DAL/PatentRepository.cs
+      branch: main
+      repo: https://github.com/Horty-twice/PatentApplicationManager.git
+    id: GetNextApplicationNumber
+    path: DAL/PatentRepository.cs
+    startLine: 380
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.DAL
+  summary: "\nВозвращает слудующий номер заявки\n"
+  example: []
+  syntax:
+    content: public string GetNextApplicationNumber()
+    return:
+      type: System.String
+    content.vb: Public Function GetNextApplicationNumber As String
+  overload: PatentApplicationManager.DAL.PatentRepository.GetNextApplicationNumber*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: PatentApplicationManager.DAL.PatentRepository.GetNextPatentNumber
+  commentId: M:PatentApplicationManager.DAL.PatentRepository.GetNextPatentNumber
+  id: GetNextPatentNumber
+  parent: PatentApplicationManager.DAL.PatentRepository
+  langs:
+  - csharp
+  - vb
+  name: GetNextPatentNumber()
+  nameWithType: PatentRepository.GetNextPatentNumber()
+  fullName: PatentApplicationManager.DAL.PatentRepository.GetNextPatentNumber()
+  type: Method
+  source:
+    remote:
+      path: DAL/PatentRepository.cs
+      branch: main
+      repo: https://github.com/Horty-twice/PatentApplicationManager.git
+    id: GetNextPatentNumber
+    path: DAL/PatentRepository.cs
+    startLine: 396
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.DAL
+  summary: "\nВозвращает слудующий номер патента\n"
+  example: []
+  syntax:
+    content: public string GetNextPatentNumber()
+    return:
+      type: System.String
+    content.vb: Public Function GetNextPatentNumber As String
+  overload: PatentApplicationManager.DAL.PatentRepository.GetNextPatentNumber*
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -877,3 +947,13 @@ references:
   name: DeletePatentApplication
   nameWithType: PatentRepository.DeletePatentApplication
   fullName: PatentApplicationManager.DAL.PatentRepository.DeletePatentApplication
+- uid: PatentApplicationManager.DAL.PatentRepository.GetNextApplicationNumber*
+  commentId: Overload:PatentApplicationManager.DAL.PatentRepository.GetNextApplicationNumber
+  name: GetNextApplicationNumber
+  nameWithType: PatentRepository.GetNextApplicationNumber
+  fullName: PatentApplicationManager.DAL.PatentRepository.GetNextApplicationNumber
+- uid: PatentApplicationManager.DAL.PatentRepository.GetNextPatentNumber*
+  commentId: Overload:PatentApplicationManager.DAL.PatentRepository.GetNextPatentNumber
+  name: GetNextPatentNumber
+  nameWithType: PatentRepository.GetNextPatentNumber
+  fullName: PatentApplicationManager.DAL.PatentRepository.GetNextPatentNumber

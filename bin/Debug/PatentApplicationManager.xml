@@ -152,11 +152,41 @@
             </summary>
             <param name="message">Сообщение для записи в лог</param>
         </member>
+        <member name="M:PatentApplicationManager.DAL.PatentRepository.GetNextApplicationNumber">
+            <summary>
+            Возвращает слудующий номер заявки
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.DAL.PatentRepository.GetNextPatentNumber">
+            <summary>
+            Возвращает слудующий номер патента
+            </summary>
+        </member>
         <member name="T:PatentApplicationManager.Entities.PatentApplication">
             <summary>
             Класс, представляющий патентную заявку.
             Содержит все основные свойства, необходимые для учета патентных заявок,
             включая информацию о заявителе, датах подачи и решения, статус и примечания.
+            </summary>
+        </member>
+        <member name="F:PatentApplicationManager.Entities.PatentApplication.STATUS_SUBMITTED">
+            <summary>
+            Статус "подана"
+            </summary>
+        </member>
+        <member name="F:PatentApplicationManager.Entities.PatentApplication.STATUS_APPROVED">
+            <summary>
+            Статус "экспертиза"
+            </summary>
+        </member>
+        <member name="F:PatentApplicationManager.Entities.PatentApplication.STATUS_GRANTED">
+            <summary>
+            Статус "патент выдан"
+            </summary>
+        </member>
+        <member name="F:PatentApplicationManager.Entities.PatentApplication.STATUS_REJECTED">
+            <summary>
+            Статус "отказ"
             </summary>
         </member>
         <member name="P:PatentApplicationManager.Entities.PatentApplication.Id">
@@ -234,9 +264,19 @@
             Инициализируется при создании формы и используется для сохранения изменений.
             </summary>
         </member>
+        <member name="M:PatentApplicationManager.UI.AddApplicationForm.UpdateFormFieldsLockState">
+            <summary>
+            Первоначальная настройка
+            </summary>
+        </member>
         <member name="M:PatentApplicationManager.UI.AddApplicationForm.#ctor">
             <summary>
             Инициализирует новый экземпляр формы добавления заявки
+            </summary>
+        </member>
+        <member name="M:PatentApplicationManager.UI.AddApplicationForm.CbStatus_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Обработчик изменения статуса
             </summary>
         </member>
         <member name="M:PatentApplicationManager.UI.AddApplicationForm.ValidateInput">
@@ -286,6 +326,11 @@
             Наследует базовую функциональность валидации от AddApplicationForm.
             </summary>
         </member>
+        <member name="M:PatentApplicationManager.UI.EditApplicationForm.UpdateFormFieldsLockState">
+            <summary>
+            Первоначальная настройка
+            </summary>
+        </member>
         <member name="F:PatentApplicationManager.UI.EditApplicationForm._repository">
             <summary>
             Репозиторий для работы с данными патентных заявок
@@ -306,6 +351,11 @@
             </summary>
             <param name="application">Объект патентной заявки для редактирования</param>
             <exception cref="T:System.ArgumentNullException">Если application равен null</exception>
+        </member>
+        <member name="M:PatentApplicationManager.UI.EditApplicationForm.CbStatus_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Обработчик изменения статуса
+            </summary>
         </member>
         <member name="M:PatentApplicationManager.UI.EditApplicationForm.ValidateInput">
             <summary>

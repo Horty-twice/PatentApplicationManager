@@ -10,6 +10,23 @@ namespace PatentApplicationManager.Entities
     public class PatentApplication
     {
         /// <summary>
+        /// Статус "подана"
+        /// </summary>
+        public const string STATUS_SUBMITTED = "Подана";
+        /// <summary>
+        /// Статус "экспертиза"
+        /// </summary>
+        public const string STATUS_APPROVED = "Экспертиза";
+        /// <summary>
+        /// Статус "патент выдан"
+        /// </summary>
+        public const string STATUS_GRANTED = "Патент выдан";
+        /// <summary>
+        /// Статус "отказ"
+        /// </summary>
+        public const string STATUS_REJECTED = "Отказ";
+
+        /// <summary>
         /// Уникальный идентификатор заявки в системе
         /// </summary>
         public int Id { get; set; }

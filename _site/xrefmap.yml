@@ -187,6 +187,32 @@ references:
   isSpec: "True"
   fullName: PatentApplicationManager.DAL.PatentRepository.GetAllPatentApplications
   nameWithType: PatentRepository.GetAllPatentApplications
+- uid: PatentApplicationManager.DAL.PatentRepository.GetNextApplicationNumber
+  name: GetNextApplicationNumber()
+  href: api/PatentApplicationManager.DAL.PatentRepository.html#PatentApplicationManager_DAL_PatentRepository_GetNextApplicationNumber
+  commentId: M:PatentApplicationManager.DAL.PatentRepository.GetNextApplicationNumber
+  fullName: PatentApplicationManager.DAL.PatentRepository.GetNextApplicationNumber()
+  nameWithType: PatentRepository.GetNextApplicationNumber()
+- uid: PatentApplicationManager.DAL.PatentRepository.GetNextApplicationNumber*
+  name: GetNextApplicationNumber
+  href: api/PatentApplicationManager.DAL.PatentRepository.html#PatentApplicationManager_DAL_PatentRepository_GetNextApplicationNumber_
+  commentId: Overload:PatentApplicationManager.DAL.PatentRepository.GetNextApplicationNumber
+  isSpec: "True"
+  fullName: PatentApplicationManager.DAL.PatentRepository.GetNextApplicationNumber
+  nameWithType: PatentRepository.GetNextApplicationNumber
+- uid: PatentApplicationManager.DAL.PatentRepository.GetNextPatentNumber
+  name: GetNextPatentNumber()
+  href: api/PatentApplicationManager.DAL.PatentRepository.html#PatentApplicationManager_DAL_PatentRepository_GetNextPatentNumber
+  commentId: M:PatentApplicationManager.DAL.PatentRepository.GetNextPatentNumber
+  fullName: PatentApplicationManager.DAL.PatentRepository.GetNextPatentNumber()
+  nameWithType: PatentRepository.GetNextPatentNumber()
+- uid: PatentApplicationManager.DAL.PatentRepository.GetNextPatentNumber*
+  name: GetNextPatentNumber
+  href: api/PatentApplicationManager.DAL.PatentRepository.html#PatentApplicationManager_DAL_PatentRepository_GetNextPatentNumber_
+  commentId: Overload:PatentApplicationManager.DAL.PatentRepository.GetNextPatentNumber
+  isSpec: "True"
+  fullName: PatentApplicationManager.DAL.PatentRepository.GetNextPatentNumber
+  nameWithType: PatentRepository.GetNextPatentNumber
 - uid: PatentApplicationManager.DAL.PatentRepository.GetPatentApplicationById(System.Int32)
   name: GetPatentApplicationById(Int32)
   href: api/PatentApplicationManager.DAL.PatentRepository.html#PatentApplicationManager_DAL_PatentRepository_GetPatentApplicationById_System_Int32_
@@ -394,6 +420,30 @@ references:
   isSpec: "True"
   fullName: PatentApplicationManager.Entities.PatentApplication.Status
   nameWithType: PatentApplication.Status
+- uid: PatentApplicationManager.Entities.PatentApplication.STATUS_APPROVED
+  name: STATUS_APPROVED
+  href: api/PatentApplicationManager.Entities.PatentApplication.html#PatentApplicationManager_Entities_PatentApplication_STATUS_APPROVED
+  commentId: F:PatentApplicationManager.Entities.PatentApplication.STATUS_APPROVED
+  fullName: PatentApplicationManager.Entities.PatentApplication.STATUS_APPROVED
+  nameWithType: PatentApplication.STATUS_APPROVED
+- uid: PatentApplicationManager.Entities.PatentApplication.STATUS_GRANTED
+  name: STATUS_GRANTED
+  href: api/PatentApplicationManager.Entities.PatentApplication.html#PatentApplicationManager_Entities_PatentApplication_STATUS_GRANTED
+  commentId: F:PatentApplicationManager.Entities.PatentApplication.STATUS_GRANTED
+  fullName: PatentApplicationManager.Entities.PatentApplication.STATUS_GRANTED
+  nameWithType: PatentApplication.STATUS_GRANTED
+- uid: PatentApplicationManager.Entities.PatentApplication.STATUS_REJECTED
+  name: STATUS_REJECTED
+  href: api/PatentApplicationManager.Entities.PatentApplication.html#PatentApplicationManager_Entities_PatentApplication_STATUS_REJECTED
+  commentId: F:PatentApplicationManager.Entities.PatentApplication.STATUS_REJECTED
+  fullName: PatentApplicationManager.Entities.PatentApplication.STATUS_REJECTED
+  nameWithType: PatentApplication.STATUS_REJECTED
+- uid: PatentApplicationManager.Entities.PatentApplication.STATUS_SUBMITTED
+  name: STATUS_SUBMITTED
+  href: api/PatentApplicationManager.Entities.PatentApplication.html#PatentApplicationManager_Entities_PatentApplication_STATUS_SUBMITTED
+  commentId: F:PatentApplicationManager.Entities.PatentApplication.STATUS_SUBMITTED
+  fullName: PatentApplicationManager.Entities.PatentApplication.STATUS_SUBMITTED
+  nameWithType: PatentApplication.STATUS_SUBMITTED
 - uid: PatentApplicationManager.MainForm
   name: MainForm
   href: api/PatentApplicationManager.MainForm.html

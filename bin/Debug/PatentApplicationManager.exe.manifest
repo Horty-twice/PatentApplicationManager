@@ -186,14 +186,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PatentApplicationManager.exe" size="84440">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PatentApplicationManager.exe" size="87000">
       <assemblyIdentity name="PatentApplicationManager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>EyWAp4OZDN8zyJuc8FxDSUrlPErvWr9jnGdF73LRQ/M=</dsig:DigestValue>
+        <dsig:DigestValue>Rpqfyd9EjnoHSSQ0PeTB6qLvUrYeo264Ss58abOlzJs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

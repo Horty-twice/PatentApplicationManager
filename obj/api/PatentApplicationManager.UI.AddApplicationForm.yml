@@ -588,7 +588,7 @@ items:
       repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: .ctor
     path: UI/AddApplicationForm.cs
-    startLine: 26
+    startLine: 66
   assemblies:
   - PatentApplicationManager
   namespace: PatentApplicationManager.UI

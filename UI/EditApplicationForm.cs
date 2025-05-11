@@ -1,7 +1,6 @@
 ﻿using PatentApplicationManager.DAL;
 using PatentApplicationManager.Entities;
 using System;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PatentApplicationManager.UI
@@ -13,6 +12,46 @@ namespace PatentApplicationManager.UI
     /// </summary>
     public partial class EditApplicationForm: Form
     {
+        /// <summary>
+        /// Первоначальная настройка
+        /// </summary>
+        private void UpdateFormFieldsLockState()
+        {
+            bool isGranted = cbStatus.Text == PatentApplication.STATUS_GRANTED;
+            bool isApproved = cbStatus.Text == PatentApplication.STATUS_APPROVED;
+            bool isSubmitted = cbStatus.Text == PatentApplication.STATUS_SUBMITTED;
+            bool isRejected = cbStatus.Text == PatentApplication.STATUS_REJECTED;
+
+            // Блокировка номеров
+            txtApplicationNumber.ReadOnly = true; // Всегда только для чтения
+
+            // Номер патента полностью блокируется при статусе "Патент выдан"
+            txtPatentNumber.ReadOnly = isGranted;
+            if (isGranted)
+            {
+                if (string.IsNullOrEmpty(txtPatentNumber.Text) || !int.TryParse(txtPatentNumber.Text, out _))
+                {
+                    txtPatentNumber.Text = _repository.GetNextPatentNumber();
+                }
+            }
+            else
+            {
+                txtPatentNumber.Text = "";
+            }
+
+            // Даты блокируются в зависимости от статуса
+            dtpDecisionDate.Enabled = isApproved || isGranted || isRejected;
+            dtpExpirationDate.Enabled = isGranted;
+
+            // Дополнительные ограничения
+            if (isSubmitted)
+            {
+                dtpDecisionDate.Checked = false;
+                dtpExpirationDate.Checked = false;
+                txtPatentNumber.Text = "";
+            }
+        }
+
         /// <summary>
         /// Репозиторий для работы с данными патентных заявок
         /// Обеспечивает доступ к базе данных для операций обновления информации о заявках.
@@ -40,11 +79,17 @@ namespace PatentApplicationManager.UI
 
             // Заполняем форму данными из заявки
             txtApplicationNumber.Text = _application.ApplicationNumber;
+            txtApplicationNumber.ReadOnly = true; // Запрещаем редактирование
             dtpFilingDate.Value = _application.FilingDate;
             txtInventionTitle.Text = _application.InventionTitle;
             txtApplicantName.Text = _application.ApplicantName;
             txtPatentAttorneyName.Text = _application.PatentAttorneyName;
             cbStatus.Text = _application.Status;
+
+            if (cbStatus.Text == PatentApplication.STATUS_GRANTED)
+            {
+                txtPatentNumber.ReadOnly = true;
+            }
 
             // Обработка Nullable<DateTime> для DecisionDate
             if (_application.DecisionDate.HasValue)
@@ -86,6 +131,38 @@ namespace PatentApplicationManager.UI
                     e.Handled = true; // Блокируем Tab
                 }
             };
+
+            if (_application.Status == "Патент выдан" && !string.IsNullOrEmpty(_application.PatentNumber))
+            {
+                txtPatentNumber.ReadOnly = true;
+            }
+
+            // Подписываемся на изменение статуса
+            cbStatus.SelectedIndexChanged += CbStatus_SelectedIndexChanged;
+
+            cbStatus.SelectedIndexChanged += (s, e) => UpdateFormFieldsLockState();
+            UpdateFormFieldsLockState(); // Первоначальная настройка
+        }
+
+        /// <summary>
+        /// Обработчик изменения статуса
+        /// </summary>
+        private void CbStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbStatus.Text == PatentApplication.STATUS_GRANTED)
+            {
+                txtPatentNumber.ReadOnly = true; // Полная блокировка поля
+                if (string.IsNullOrEmpty(txtPatentNumber.Text))
+                {
+                    txtPatentNumber.Text = _repository.GetNextPatentNumber();
+                }
+            }
+            else
+            {
+                txtPatentNumber.ReadOnly = false;
+                txtPatentNumber.Text = "";
+            }
+            UpdateFormFieldsLockState(); // Обновляем состояние всех полей
         }
 
         /// <summary>
@@ -99,18 +176,40 @@ namespace PatentApplicationManager.UI
         {
             lblError.Text = ""; // Сбрасываем текст ошибки
 
-            if (string.IsNullOrWhiteSpace(txtApplicationNumber.Text))
+            /*if (string.IsNullOrWhiteSpace(txtApplicationNumber.Text))
             {
                 lblError.Text = "Пожалуйста, введите номер заявки.";
                 return false;
-            }
+            }*/
 
             // Проверка формата номера заявки (например, только цифры и символы "/")
-            if (!Regex.IsMatch(txtApplicationNumber.Text, "^[0-9/]+$"))
+            /*if (!Regex.IsMatch(txtApplicationNumber.Text, "^[0-9/]+$"))
             {
                 lblError.Text = "Номер заявки должен содержать только цифры и символы '/'.";
                 return false;
+            }*/
+
+            // Проверка соответствия статуса и номера патента
+            var status = cbStatus.Text;
+
+            // Проверка номера патента
+            if (status == PatentApplication.STATUS_GRANTED && string.IsNullOrEmpty(txtPatentNumber.Text))
+            {
+                txtPatentNumber.Text = _repository.GetNextPatentNumber();
             }
+            else if (status != PatentApplication.STATUS_GRANTED && !string.IsNullOrEmpty(txtPatentNumber.Text))
+            {
+                txtPatentNumber.Text = "";
+            }
+
+            // Проверка дат
+            if (status == PatentApplication.STATUS_SUBMITTED &&
+                (dtpDecisionDate.Checked || dtpExpirationDate.Checked))
+            {
+                lblError.Text = "Для статуса 'Подана' даты решения и истечения недопустимы";
+                return false;
+            }
+
 
             if (dtpFilingDate.Value > DateTime.Now)
             {
@@ -161,11 +260,11 @@ namespace PatentApplicationManager.UI
             }
 
             // Проверка формата номера патента (например, только цифры)
-            if (!string.IsNullOrWhiteSpace(txtPatentNumber.Text) && !Regex.IsMatch(txtPatentNumber.Text, "^[0-9]+$"))
+            /*if (!string.IsNullOrWhiteSpace(txtPatentNumber.Text) && !Regex.IsMatch(txtPatentNumber.Text, "^[0-9]+$"))
             {
                 lblError.Text = "Номер патента должен содержать только цифры.";
                 return false;
-            }
+            }*/
 
             // Проверка логики дат
             if (dtpDecisionDate.Checked && dtpDecisionDate.Value < dtpFilingDate.Value)

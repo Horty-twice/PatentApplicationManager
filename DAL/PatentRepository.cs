@@ -374,5 +374,39 @@ namespace PatentApplicationManager.DAL
                 Console.WriteLine($"Ошибка при логировании: {ex.Message}");
             }
         }
+
+        /// <summary>
+        /// Возвращает слудующий номер заявки
+        /// </summary>
+        public string GetNextApplicationNumber()
+        {
+            using (var connection = new SQLiteConnection(_connectionString))
+            {
+                connection.Open();
+                var command = new SQLiteCommand(
+                    "SELECT MAX(CAST(ApplicationNumber AS INTEGER)) FROM PatentApplications " +
+                    "WHERE ApplicationNumber GLOB '[0-9]*'", connection);
+                var result = command.ExecuteScalar();
+                return (result == DBNull.Value ? 1 : Convert.ToInt32(result) + 1).ToString();
+            }
+        }
+
+        /// <summary>
+        /// Возвращает слудующий номер патента
+        /// </summary>
+        public string GetNextPatentNumber()
+        {
+            using (var connection = new SQLiteConnection(_connectionString))
+            {
+                connection.Open();
+                var command = new SQLiteCommand(
+                    "SELECT MAX(CAST(PatentNumber AS INTEGER)) FROM PatentApplications " +
+                    "WHERE PatentNumber GLOB '[0-9]*'",
+                    connection);
+                var result = command.ExecuteScalar();
+                return (result == DBNull.Value ? 1 : Convert.ToInt32(result) + 1).ToString();
+            }
+        }
+
     }
 }

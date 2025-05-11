@@ -17,6 +17,10 @@ items:
   - PatentApplicationManager.Entities.PatentApplication.PatentAttorneyName
   - PatentApplicationManager.Entities.PatentApplication.PatentNumber
   - PatentApplicationManager.Entities.PatentApplication.Status
+  - PatentApplicationManager.Entities.PatentApplication.STATUS_APPROVED
+  - PatentApplicationManager.Entities.PatentApplication.STATUS_GRANTED
+  - PatentApplicationManager.Entities.PatentApplication.STATUS_REJECTED
+  - PatentApplicationManager.Entities.PatentApplication.STATUS_SUBMITTED
   langs:
   - csharp
   - vb
@@ -56,6 +60,146 @@ items:
   modifiers.vb:
   - Public
   - Class
+- uid: PatentApplicationManager.Entities.PatentApplication.STATUS_SUBMITTED
+  commentId: F:PatentApplicationManager.Entities.PatentApplication.STATUS_SUBMITTED
+  id: STATUS_SUBMITTED
+  parent: PatentApplicationManager.Entities.PatentApplication
+  langs:
+  - csharp
+  - vb
+  name: STATUS_SUBMITTED
+  nameWithType: PatentApplication.STATUS_SUBMITTED
+  fullName: PatentApplicationManager.Entities.PatentApplication.STATUS_SUBMITTED
+  type: Field
+  source:
+    remote:
+      path: Entities/PatentApplication.cs
+      branch: main
+      repo: https://github.com/Horty-twice/PatentApplicationManager.git
+    id: STATUS_SUBMITTED
+    path: Entities/PatentApplication.cs
+    startLine: 14
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.Entities
+  summary: "\nСтатус &quot;подана&quot;\n"
+  example: []
+  syntax:
+    content: public const string STATUS_SUBMITTED = "Подана"
+    return:
+      type: System.String
+    content.vb: Public Const STATUS_SUBMITTED As String = "Подана"
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: PatentApplicationManager.Entities.PatentApplication.STATUS_APPROVED
+  commentId: F:PatentApplicationManager.Entities.PatentApplication.STATUS_APPROVED
+  id: STATUS_APPROVED
+  parent: PatentApplicationManager.Entities.PatentApplication
+  langs:
+  - csharp
+  - vb
+  name: STATUS_APPROVED
+  nameWithType: PatentApplication.STATUS_APPROVED
+  fullName: PatentApplicationManager.Entities.PatentApplication.STATUS_APPROVED
+  type: Field
+  source:
+    remote:
+      path: Entities/PatentApplication.cs
+      branch: main
+      repo: https://github.com/Horty-twice/PatentApplicationManager.git
+    id: STATUS_APPROVED
+    path: Entities/PatentApplication.cs
+    startLine: 18
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.Entities
+  summary: "\nСтатус &quot;экспертиза&quot;\n"
+  example: []
+  syntax:
+    content: public const string STATUS_APPROVED = "Экспертиза"
+    return:
+      type: System.String
+    content.vb: Public Const STATUS_APPROVED As String = "Экспертиза"
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: PatentApplicationManager.Entities.PatentApplication.STATUS_GRANTED
+  commentId: F:PatentApplicationManager.Entities.PatentApplication.STATUS_GRANTED
+  id: STATUS_GRANTED
+  parent: PatentApplicationManager.Entities.PatentApplication
+  langs:
+  - csharp
+  - vb
+  name: STATUS_GRANTED
+  nameWithType: PatentApplication.STATUS_GRANTED
+  fullName: PatentApplicationManager.Entities.PatentApplication.STATUS_GRANTED
+  type: Field
+  source:
+    remote:
+      path: Entities/PatentApplication.cs
+      branch: main
+      repo: https://github.com/Horty-twice/PatentApplicationManager.git
+    id: STATUS_GRANTED
+    path: Entities/PatentApplication.cs
+    startLine: 22
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.Entities
+  summary: "\nСтатус &quot;патент выдан&quot;\n"
+  example: []
+  syntax:
+    content: public const string STATUS_GRANTED = "Патент выдан"
+    return:
+      type: System.String
+    content.vb: Public Const STATUS_GRANTED As String = "Патент выдан"
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: PatentApplicationManager.Entities.PatentApplication.STATUS_REJECTED
+  commentId: F:PatentApplicationManager.Entities.PatentApplication.STATUS_REJECTED
+  id: STATUS_REJECTED
+  parent: PatentApplicationManager.Entities.PatentApplication
+  langs:
+  - csharp
+  - vb
+  name: STATUS_REJECTED
+  nameWithType: PatentApplication.STATUS_REJECTED
+  fullName: PatentApplicationManager.Entities.PatentApplication.STATUS_REJECTED
+  type: Field
+  source:
+    remote:
+      path: Entities/PatentApplication.cs
+      branch: main
+      repo: https://github.com/Horty-twice/PatentApplicationManager.git
+    id: STATUS_REJECTED
+    path: Entities/PatentApplication.cs
+    startLine: 26
+  assemblies:
+  - PatentApplicationManager
+  namespace: PatentApplicationManager.Entities
+  summary: "\nСтатус &quot;отказ&quot;\n"
+  example: []
+  syntax:
+    content: public const string STATUS_REJECTED = "Отказ"
+    return:
+      type: System.String
+    content.vb: Public Const STATUS_REJECTED As String = "Отказ"
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
 - uid: PatentApplicationManager.Entities.PatentApplication.Id
   commentId: P:PatentApplicationManager.Entities.PatentApplication.Id
   id: Id
@@ -74,7 +218,7 @@ items:
       repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: Id
     path: Entities/PatentApplication.cs
-    startLine: 14
+    startLine: 31
   assemblies:
   - PatentApplicationManager
   namespace: PatentApplicationManager.Entities
@@ -111,7 +255,7 @@ items:
       repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: ApplicationNumber
     path: Entities/PatentApplication.cs
-    startLine: 19
+    startLine: 36
   assemblies:
   - PatentApplicationManager
   namespace: PatentApplicationManager.Entities
@@ -148,7 +292,7 @@ items:
       repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: FilingDate
     path: Entities/PatentApplication.cs
-    startLine: 24
+    startLine: 41
   assemblies:
   - PatentApplicationManager
   namespace: PatentApplicationManager.Entities
@@ -185,7 +329,7 @@ items:
       repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: InventionTitle
     path: Entities/PatentApplication.cs
-    startLine: 29
+    startLine: 46
   assemblies:
   - PatentApplicationManager
   namespace: PatentApplicationManager.Entities
@@ -222,7 +366,7 @@ items:
       repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: ApplicantName
     path: Entities/PatentApplication.cs
-    startLine: 34
+    startLine: 51
   assemblies:
   - PatentApplicationManager
   namespace: PatentApplicationManager.Entities
@@ -259,7 +403,7 @@ items:
       repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: PatentAttorneyName
     path: Entities/PatentApplication.cs
-    startLine: 39
+    startLine: 56
   assemblies:
   - PatentApplicationManager
   namespace: PatentApplicationManager.Entities
@@ -296,7 +440,7 @@ items:
       repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: Status
     path: Entities/PatentApplication.cs
-    startLine: 44
+    startLine: 61
   assemblies:
   - PatentApplicationManager
   namespace: PatentApplicationManager.Entities
@@ -333,7 +477,7 @@ items:
       repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: DecisionDate
     path: Entities/PatentApplication.cs
-    startLine: 49
+    startLine: 66
   assemblies:
   - PatentApplicationManager
   namespace: PatentApplicationManager.Entities
@@ -370,7 +514,7 @@ items:
       repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: PatentNumber
     path: Entities/PatentApplication.cs
-    startLine: 54
+    startLine: 71
   assemblies:
   - PatentApplicationManager
   namespace: PatentApplicationManager.Entities
@@ -407,7 +551,7 @@ items:
       repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: ExpirationDate
     path: Entities/PatentApplication.cs
-    startLine: 59
+    startLine: 76
   assemblies:
   - PatentApplicationManager
   namespace: PatentApplicationManager.Entities
@@ -444,7 +588,7 @@ items:
       repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: Notes
     path: Entities/PatentApplication.cs
-    startLine: 64
+    startLine: 81
   assemblies:
   - PatentApplicationManager
   namespace: PatentApplicationManager.Entities
@@ -481,7 +625,7 @@ items:
       repo: https://github.com/Horty-twice/PatentApplicationManager.git
     id: .ctor
     path: Entities/PatentApplication.cs
-    startLine: 69
+    startLine: 86
   assemblies:
   - PatentApplicationManager
   namespace: PatentApplicationManager.Entities
@@ -793,6 +937,13 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
 - uid: PatentApplicationManager.Entities.PatentApplication.Id*
   commentId: Overload:PatentApplicationManager.Entities.PatentApplication.Id
   name: Id
@@ -810,13 +961,6 @@ references:
   name: ApplicationNumber
   nameWithType: PatentApplication.ApplicationNumber
   fullName: PatentApplicationManager.Entities.PatentApplication.ApplicationNumber
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
 - uid: PatentApplicationManager.Entities.PatentApplication.FilingDate*
   commentId: Overload:PatentApplicationManager.Entities.PatentApplication.FilingDate
   name: FilingDate
